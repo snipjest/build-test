@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff0000">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <title>Kitchens</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href="/css/common.css" rel="stylesheet"></head>
+
+<body class="body">
+    <div class="body__bg body__bg_overlay_deep body__bg_fixed js-slider-product__bg"></div>
+    <header class="header js-header">
+    <div class="container">
+      <div class="header__wrapper">
+        <a class="logo logo_header js-header__logo" href="index.html" aria-label="Логотип">
+          <img class="image image_logo is-opened" src="/img/logo-black.svg" alt="Логотип Нестандартные кухни">
+          <svg class="icon icon_logo icon_logo_nav image_logo image_logo_black" focusable="false">
+            <use xlink:href="#logo-black"></use>
+          </svg>
+          <svg class="icon icon_logo icon_logo_nav image_logo_white" focusable="false">
+            <use xlink:href="#logo-white"></use>
+          </svg>
+        </a>
+        <div class="header__socials">
+          <div class="socials">
+            <!-- <div class="socials__item">
+              <a href="#" class="socials__link">
+                <svg class="socials__icon socials__icon_color_black">
+                  <use xlink:href="#icon-insragram"></use>
+                </svg>
+              </a>
+            </div> -->
+            <div class="socials__item">
+              <a href="#" class="socials__link">
+                <svg class="socials__icon socials__icon_color_black">
+                  <use xlink:href="#icon-vk"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button class="header__btn header__btn--black js-header__btn">
+          <span>Меню</span>
+          <span class="is-opened">Закрыть</span>
+          <svg class="icon icon_size_l icon_burger is-opened" focusable="false">
+            <use xlink:href="#hamburger"></use>
+          </svg>
+          <svg class="icon icon_size_l icon_close" focusable="false">
+            <use xlink:href="#close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="header__menu js-header__menu">
+      <nav class="nav">
+        <div class="nav__left">
+          <ul class="nav__list">
+            <li class="nav__item js-nav__item" data-background="/img/nav__bg_1.jpg">
+              <a href="/" class="nav__link">Главная</a>
+            </li>
+            <li class="nav__item js-nav__item" data-background="/img/nav__bg_2.jpg">
+              <a href="categories.html" class="nav__link">Наши проекты</a>
+            </li>
+            <li class="nav__item js-nav__item" data-background="/img/nav__bg_3.jpg">
+              <a href="models-new.html" class="nav__link">Модельный ряд</a>
+            </li>
+            <li class="nav__item js-nav__item" data-background="/img/nav__bg_4.jpg">
+              <a href="article-list.html" class="nav__link">Покупателям</a>
+            </li>
+            <li class="nav__item js-nav__item" data-background="/img/nav__bg_5.jpg">
+              <a href="#" class="nav__link">Производство</a>
+            </li>
+            <li class="nav__item js-nav__item" data-background="/img/nav__bg_6.jpg">
+              <a href="#" class="nav__link">Отзывы</a>
+            </li>
+            <li class="nav__item js-nav__item" data-background="/img/nav__bg_7.jpg">
+              <a href="contacts.html" class="nav__link">Контакты</a>
+            </li>
+            <li class="nav__item nav__item_socials">
+              <div class="socials">
+                <!-- <div class="socials__item">
+                  <a href="#" class="socials__link">
+                    <svg class="socials__icon socials__icon_color_black">
+                      <use xlink:href="#icon-insragram"></use>
+                    </svg>
+                  </a>
+                </div> -->
+                <div class="socials__item">
+                  <a href="#" class="socials__link">
+                    <svg class="socials__icon socials__icon_color_black">
+                      <use xlink:href="#icon-vk"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="nav__right">
+          <div class="nav__bg js-nav__bg" style="background-image: url(/img/nav__bg_default.jpg)"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+    <main class="main main_indent_inner js-header__main">
+        <div class="project-page">
+            <div class="container">
+                <div class="user-content user-content_page">
+                    <div class="breadcrumbs-wrapper">
+                        <ol class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                <a class="breadcrumbs__link" href="categories.html" itemprop="item">
+                                    <span itemprop="name">Кухни</span>
+                                </a>
+                                <svg class="breadcrumbs__arrow" focusable="false">
+                                    <use xlink:href="#keyboard-arrow-right"></use>
+                                </svg>
+                                <meta itemprop="position" content="0" />
+                            </li>
+                            <li class="breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                                <a class="breadcrumbs__link" href="product-list.html" itemprop="item">
+                                    <span itemprop="name">Кухни Неоклассика</span>
+                                </a>
+                                <svg class="breadcrumbs__arrow" focusable="false">
+                                    <use xlink:href="#keyboard-arrow-right"></use>
+                                </svg>
+                                <meta itemprop="position" content="1" />
+                            </li>
+                            <li class="breadcrumbs__item is-active">Кирпчики</li>
+                        </ol>
+                    </div>
+                    <div class="project-page__frame">
+                        <h1 class="project-page__title title title_one">
+                            #09134
+                        </h1>
+                        <div class="project-page__info">
+                            <div class="project-page__info-item">
+                                <svg class="project-page__icon" focusable="false">
+                                    <use xlink:href="#marker-fill"></use>
+                                </svg>
+                                <span class="project-page__info-caption">
+                                    г. Мытищи, ЖК «Авиатор»
+                                </span>
+                            </div>
+                            <div class="project-page__info-item">
+                                <svg class="project-page__icon" focusable="false">
+                                    <use xlink:href="#calendar"></use>
+                                </svg>
+                                <span class="project-page__info-caption">
+                                    декабрь 2019
+                                </span>
+                            </div>
+                            <a href="#" class="project-page__info-item project-page__info-item_link">
+                                <svg class="project-page__icon" focusable="false">
+                                    <use xlink:href="#layers"></use>
+                                </svg>
+                                <span class="project-page__info-caption">
+                                    Базовая модель «Гранат»
+                                </span>
+                            </a>
+                        </div>
+                        <div class="project-page__slider-wrapper">
+                            <div class="project-page__slider swiper-container">
+                                <div class="swiper-wrapper js-gallery__product">
+                                    <div class="project-page__slide swiper-slide js-slider-product__slide" data-href="/img/examp2.jpg" style="background-image: url(/img/examp2.jpg)"></div>
+                                    <div class="project-page__slide swiper-slide js-slider-product__slide" data-href="/img/examp.jpg" style="background-image: url(/img/examp.jpg)"></div>
+                                    <div class="project-page__slide swiper-slide js-slider-product__slide" data-href="/img/examp.jpg" style="background-image: url(/img/examp.jpg)"></div>
+                                </div>
+                                <div class="project-page__navigation">
+                                    <div class="project-page__slider-prev">
+                                        <svg class="project-page__slider-icon">
+                                            <use xlink:href="#slider-arrow"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="project-page__slider-next">
+                                        <svg class="project-page__slider-icon">
+                                            <use xlink:href="#slider-arrow"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="slider-pagination swiper-pagination js-slider-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="project-page__description">
+                            <h2 class="project-page__subtitle">
+                                Стоимость проекта:
+                            </h2>
+                            <span class="project-page__price">
+                                300 000 рублей*
+                            </span>
+                            <span class="project-page__caption">
+                                Цена зависит от условий и требований к комплектации конкретного клиента
+                            </span>
+                            <article class="project-page__text">
+                                <p class="project-page__paragraph">
+                                    Нет, если правильно обыграть это сочетание, использовать разные оттенки и фактуры —
+                                    например, бетон с гладкими материалами. В моде всё брутальное и «грязноватое», к тому же,
+                                    текстура у бетона и сама по себе не скучная: неоднородность материала и разводы создают
+                                    своеобразный рисунок. Кроме того, бетонный серый легко уравновесить белыми и чёрными оттенками.
+                                </p>
+                                <p class="project-page__paragraph">
+                                    Если брутальность бетона вам не близка, а идея тотально серого интерьера кажется
+                                    неинтересной, обратите внимание на классическое противопоставление матовых и глянцевых
+                                    материалов. В проекте на фото лаконичная серая кухня оформлена как единый крупный объём,
+                                    но разнообразия интерьеру придают контрастная глянцевая вставка фартука и беспроигрышные
+                                    дополнительные оттенки —тёмная древесина и белизна плафонов.
+                                </p>
+                            </article>
+                            <div class="project-page__view">
+                                <div class="project-page__picture" style="background-image: url(/img/examp.jpg)"></div>
+                            </div>
+                        </div>
+                        <div class="project-page__description">
+                            <h2 class="project-page__subtitle">
+                                Отзыв клиента:
+                            </h2>
+                            <article class="project-page__text project-page__text_indent">
+                                <p class="project-page__paragraph">
+                                    Кухню выбирали долго, рассматривали не один салон. Посоветовали друзья нам обратиться
+                                    в август кухни, и не пожалели) Елена менеджер составила нам проект кухни по нашим
+                                    предпочтениям, цена всей этой радости нам очень даже приглянулась, также понравилось
+                                    и то, что кухня делается 15 рабочих дней ( сколько мы обошли салонов минимум месяц делают)!
+                                    На следующий день к нам приехал замерщик Василий, все измерил. В процессе изготовления
+                                    кухни с нами общалась Елена и предлагала, по мнению специалистов, изменить какие-то
+                                    нюансы, опять же редко встретишь такое отношение! Обычно, как все это происходит,
+                                    только деньги отдаёшь и все тишина, потом сам названиваешь постоянно, узнаешь где кухня
+                                    в обещанные сроки и вообще на какой она стадии! В август кухни звонили нам и звонили
+                                    четко в обговорённые дни, приятно такое отношение! Доставка в выходной день, что опять 
+                                    же очень удобно ( по крайней мере для нас). По поводу сборки: на следующий день после
+                                    доставки нам позвонил Дмитрий и мы договорились на сборку, приехали ребята(всего их
+                                    было трое), собирали целый день, по мне так отлично, все убрали за собой, мы зашли в 
+                                    готовую кухню и были приятно удивлены, перед нами именно та кухня, которую мы хотели
+                                    видеть и чертили на своих листочках... ИДЕАЛЬНО! Планируем сделать ещё заказ, тк они
+                                    изготавливают не только кухни))
+                                </p>
+                            </article>
+                            <div class="project-page__author">
+                                <span class="project-page__author-name">
+                                    Лукьянова Анастасия
+                                </span>
+                                <span class="project-page__author-prof">
+                                    фитнес-инструктор
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="body__indent body__indent_m">
+                    <section class="toggle-page">
+                        <h2 class="visually-hidden">Постраничная навигация</h2>
+                        <a class="toggle-page__link" href="#">
+                            <div class="toggle-page__img toggle-page__img_prev js-toggle-page__img" data-image="/img/toggle-page__img-1.jpg">
+                            </div>
+                            <div class="toggle-page__box toggle-page__box_prev">
+                                <p class="toggle-page__name">#49800</p>
+                                <p class="toggle-page__arrow">
+                                    <svg class="icon icon_size_xs icon_second" focusable="false">
+                                        <use xlink:href="#arrow-left"></use>
+                                    </svg> Предыдущий проект
+                                </p>
+                            </div>
+                        </a>
+                        <a class="toggle-page__link" href="#">
+                            <div class="toggle-page__box toggle-page__box_next">
+                                <p class="toggle-page__name">#17200</p>
+                                <p class="toggle-page__arrow toggle-page__arrow_next">Следующий проект
+                                    <svg class="icon icon_size_xs icon_second" focusable="false">
+                                        <use xlink:href="#arrow-right"></use>
+                                    </svg>
+                                </p>
+                            </div>
+                            <div class="toggle-page__img toggle-page__img_next js-toggle-page__img" data-image="/img/toggle-page__img-1.jpg"></div>
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <ul class="footer__left">
+          <li class="footer__item">
+            <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yQZ1" target="_blank" rel="noreferrer">
+              <svg class="icon icon_size_sm icon_brand" focusable="false">
+                <use xlink:href="#marker-map"></use>
+              </svg>
+              <span>Московская область, рабочий посёлок Новоивановское, ул. Агрохимиков, 1 (ТЦ «Мебель России»)</span>
+            </a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yS3G" target="_blank" rel="noreferrer">
+              <svg class="icon icon_size_sm icon_brand" focusable="false">
+                <use xlink:href="#marker-map"></use>
+              </svg>
+              <span>Московская область, г. Красногорск, ул. Ленина, 2 (ТЦ «Красный кит»)</span>
+            </a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yXOU" target="_blank" rel="noreferrer">
+              <svg class="icon icon_size_sm icon_brand" focusable="false">
+                <use xlink:href="#marker-map"></use>
+              </svg>
+              <span>Московская область, г. Мытищи, Шараповский проезд, 2с4</span>
+            </a>
+          </li>
+        </ul>
+        <div class="footer__right">
+          <a class="logo" href="index.html">
+            <svg class="icon icon_logo_footer" focusable="false">
+              <use xlink:href="#logo-footer"></use>
+            </svg>
+          </a>
+          <p class="footer__info p13">2014-<span id="currentYear"></span> ООО «Нестандартные кухни»</p>
+          <a class="footer__phone" href="tel:+74956425000">+7(495) 642-50-00</a>
+          <div class="footer__dev">
+            <a href="https://onlinebees.ru/" class="dev-block">
+              <div class="dev-block__caption">
+                Сделано в
+              </div>
+              <svg class="dev-block__icon" focusable="false">
+                <use xlink:href="#shape"></use>
+              </svg>
+              <div class="dev-block__bold-caption">
+                ONLINEBEES
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+    <div class="pattern pattern_small pattern_indention_bottom pattern_full_size pattern_large"></div>
+    <div class="pattern pattern_small pattern_indention_s"></div>
+    <div class="pattern pattern_small pattern_right pattern_indention_percent"></div>
+    <a href="#popup-form" class="promo-code promo-code_fixed button button_brand js-button_popup-promo " data-effect="mfp-zoom-in">
+        <span>Заявка на просчет</span>
+    </a>
+
+    <div class="popup mfp-with-anim mfp-hide" id="popup-form">
+        <form class="form" action="#">
+            <div class="form-group">
+                <input class="form-control" id="name" type="text" autocomplete="on" required>
+                <span class="form__line"></span>
+                <label class="control-label" for="name">Как Вас зовут?</label>
+            </div>
+            <div class="form-group has-error">
+                <input class="form-control" id="phone" type="tel" autocomplete="on" required>
+                <span class="form__line"></span>
+                <label class="control-label" for="phone">Номер телефона</label>
+                <div class="help-block">Поле обязательно к заполнению</div>
+            </div>
+            <div class="form-group has-access">
+                <input class="form-control" id="email" type="email" autocomplete="on" required>
+                <span class="form__line"></span>
+                <label class="control-label" for="email">email</label>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control form-control_textarea" id="message" name="message"></textarea>
+                <span class="form__line"></span>
+                <label class="control-label" for="message">Комментарий к заявке</label>
+            </div>
+            <div class="form-group">
+                <input type="file">
+            </div>
+
+            <button class="button button_brand button_size_m button_centered"><span>Отправить</span></button>
+        </form>
+        <div class="popup__thanks">
+            <!-- display: block for open -->
+            <p class="popup__text">Спасибо за заявку!</p>
+            <p class="popup__text">Наши менеджеры свяжутся с вами в ближайшее время!</p>
+        </div>
+    </div>
+
+    <div class="popup mfp-with-anim mfp-hide" id="popup-promo">
+        <div class="popup__caption">
+            <p class="popup__title">Применить промокод</p>
+            <p class="popup__description">
+                Приятно, граждане, наблюдать, как представители современных социальных резервов, инициированные исключительно
+                синтетически, заблокированы в рамках своих собственных рациональных ограничений.
+            </p>
+        </div>
+        <form class="form" action="#">
+            <div class="form-group">
+                <input class="form-control" id="name" type="text" autocomplete="off" required>
+                <span class="form__line"></span>
+                <label class="control-label" for="name">Введите промокод</label>
+            </div>
+            <div class="form-group has-error">
+                <input class="form-control" id="test-error" type="text" autocomplete="off" required>
+                <span class="form__line"></span>
+                <label class="control-label" for="name">Введите промокод</label>
+            </div>
+            <div class="form-group has-access">
+                <input class="form-control" id="test-access" type="text" autocomplete="off" required>
+                <span class="form__line"></span>
+                <label class="control-label" for="name">Введите промокод</label>
+            </div>
+            <button class="button button_brand button_size_m button_centered"><span>Применить</span></button>
+        </form>
+    </div>
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+        <div class="slides"></div>
+        <p class="title"></p>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
+<script type="text/javascript" src="/js/common.js"></script></body>
+
+</html>
