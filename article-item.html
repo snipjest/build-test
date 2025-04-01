@@ -17,293 +17,438 @@
 <link href="/css/common.css" rel="stylesheet"></head>
 
 <body class="body">
-  <div class="body__bg js-category__bg"></div>
-  <header class="header js-header">
-    <div class="container">
-      <div class="header__wrapper">
-        <a class="logo logo_header js-header__logo" href="index.html" aria-label="Логотип">
-          <img class="image image_logo is-opened" src="/img/logo-black.svg" alt="Логотип Нестандартные кухни">
-          <svg class="icon icon_logo icon_logo_nav image_logo image_logo_black" focusable="false">
-            <use xlink:href="#logo-black"></use>
+  <header class="header header--black js-header">
+  <div class="container">
+    <div class="header__wrapper">
+      <a class="logo header__logo js-header__logo" href="index.html" aria-label="Логотип">
+        <svg class="logo__black-white" focusable="false">
+          <use xlink:href="#logo-black-white"></use>
+        </svg>
+        <svg class="logo__red-black" focusable="false">
+          <use xlink:href="#logo-red-black"></use>
+        </svg>
+        <svg class="logo__red-white" focusable="false">
+          <use xlink:href="#logo-red-white"></use>
+        </svg>
+      </a>
+      <div class="header__socials">
+        <div class="socials">
+          <div class="socials__item">
+            <a href="#" class="socials__link">
+              <svg class="socials__icon socials__icon_color_black">
+                <use xlink:href="#icon-vk"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header__btn-group">
+        <button class="header__btn-catalog-desktop button button--brand">
+          <svg focusable="false">
+            <use xlink:href="#catalog"></use>
           </svg>
-          <svg class="icon icon_logo icon_logo_nav image_logo_white" focusable="false">
-            <use xlink:href="#logo-white"></use>
-          </svg>
-        </a>
-        <div class="header__socials">
-          <div class="socials">
-            <!-- <div class="socials__item">
-              <a href="#" class="socials__link">
-                <svg class="socials__icon socials__icon_color_black">
-                  <use xlink:href="#icon-insragram"></use>
+          <span>Каталог</span>
+        </button>
+        <div class="header__burger">
+          <div class="burger-before"></div>
+          <button class="burger">
+            <div class="burger__text">меню</div>
+            <div class="burger__icon">
+              <div class="burger__inner">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__menu js-header__menu">
+    <nav class="nav">
+      <div class="nav__left">
+        <ul class="nav__list">
+          <li class="nav__item nav__item_catalog">
+            <button class="header__btn-catalog-mobile button button--brand">
+              <svg focusable="false">
+                <use xlink:href="#catalog"></use>
+              </svg>
+              <span>Каталог</span>
+            </button>
+          </li>
+          <li class="nav__item js-nav__item" data-background="/img/nav__bg_1.jpg">
+            <a href="/" class="nav__link">Главная</a>
+          </li>
+          <li class="nav__item js-nav__item" data-background="/img/nav__bg_2.jpg">
+            <a href="categories.html" class="nav__link">Наши проекты</a>
+          </li>
+          <li class="nav__item js-nav__item" data-background="/img/nav__bg_3.jpg">
+            <a href="models-new.html" class="nav__link">Модельный ряд</a>
+          </li>
+          <li class="nav__item js-nav__item" data-background="/img/nav__bg_4.jpg">
+            <a href="article-list.html" class="nav__link">Покупателям</a>
+          </li>
+          <li class="nav__item js-nav__item" data-background="/img/nav__bg_5.jpg">
+            <a href="manufacture.html" class="nav__link">Производство</a>
+          </li>
+          <li class="nav__item js-nav__item" data-background="/img/nav__bg_6.jpg">
+            <a href="reviews.html" class="nav__link">Отзывы</a>
+          </li>
+          <li class="nav__item js-nav__item" data-background="/img/nav__bg_7.jpg">
+            <a href="contacts.html" class="nav__link">Контакты</a>
+          </li>
+          <li class="nav__item nav__item_socials">
+            <div class="socials">
+              <div class="socials__item">
+                <a href="#" class="socials__link">
+                  <svg class="socials__icon socials__icon_color_black">
+                    <use xlink:href="#icon-vk"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="nav__right">
+        <div class="nav__bg js-nav__bg" style="background-image: url(/img/nav__bg_default.jpg)"></div>
+      </div>
+    </nav>
+  </div>
+  <div class="menu">
+    <div class="menu__inner simplebar">
+        <div class="container">
+            <div class="menu__back">
+                <svg focusable="false">
+                    <use xlink:href="#keyboard-arrow-right"></use>
                 </svg>
-              </a>
-            </div> -->
-            <div class="socials__item">
-              <a href="#" class="socials__link">
-                <svg class="socials__icon socials__icon_color_black">
-                  <use xlink:href="#icon-vk"></use>
-                </svg>
-              </a>
+                <span>Назад</span>
+            </div>
+            <div class="menu__categories">
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дорогие, элитные, премиум</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Золото</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Золото</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бронза</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бетон</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дорогие, элитные, премиум</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Антрацит</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Светлые</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Золото</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бронза</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бетон</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Золото</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бронза</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бетон</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Серый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Антрацит</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дорогие, элитные, премиум</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бронза</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бетон</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Серый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Антрацит</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Светлые</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Золото</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бронза</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бетон</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Серый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Антрацит</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Светлые</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Золото</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бронза</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бетон</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Серый</a></li>
+                    </ul>
+                </div>
+                <a class="menu__link-all" href="">
+                    <span>Смотреть весь каталог</span>
+                    <svg focusable="false">
+                        <use xlink:href="#keyboard-arrow-right"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+
+<noscript>
+  <style>
+    /**
+    * Reinstate scrolling for non-JS clients
+    */
+    .simplebar-content-wrapper {
+      scrollbar-width: auto;
+      -ms-overflow-style: auto;
+    }
+
+    .simplebar-content-wrapper::-webkit-scrollbar,
+    .simplebar-hide-scrollbar::-webkit-scrollbar {
+      display: initial;
+      width: initial;
+      height: initial;
+    }
+  </style>
+</noscript>
+  <main class="main main_indent_inner js-header__main">
+    <div class="body-indent-big">
+      <div class="container">
+        <div class="container-grid">
+          <div class="user-content_page">
+            <ul class="breadcrumbs breadcrumbs--margin">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="/">Главная</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="article-list.html">Полезная информация</a>
+              </li>
+              <li class="breadcrumbs__item">Серый цвет на кухне — с чем его сочетать?</li>
+            </ul>
+            <div class="user-content">
+              <div class="head-info__info">
+                <div class="head-info__title-wrap">
+                  <div class="square square_small square_outline js-square_small"></div>
+                  <h1 class="head-info__title">Серый цвет на кухне — с чем его сочетать?</h1>
+                </div>
+              </div>
+              <p>Есть расхожее интерьерное правило: всё, что покупается в дом надолго, должно быть белым, серым или
+                деревянным — а цвет придёт вместе с бытом. Соглашусь. Другой вопрос: какой именно серый стоит взять для
+                кухни? Какой интенсивности, на каких фактурах и материалах его применить? — Объясню, как объясняю своим
+                заказчикам.</p>
+              <img src="/img/user-content__img-1.jpg" alt="img">
+              <h4>1. Серые стены и серая кухня — будет очень бледно?</h4>
+              <p>Нет, если правильно обыграть это сочетание, использовать разные оттенки и фактуры — например, бетон
+                с гладкими материалами. В моде всё брутальное и «грязноватое», к тому же, текстура у бетона и сама по себе
+                не скучная: неоднородность материала и разводы создают своеобразный рисунок. Кроме того, бетонный серый
+                легко уравновесить белыми и чёрными оттенками.
+              </p>
+              <p>Если брутальность бетона вам не близка, а идея тотально серого интерьера кажется неинтересной, обратите
+                внимание на классическое противопоставление матовых и глянцевых материалов. В проекте на фото лаконичная
+                серая кухня оформлена как единый крупный объём, но разнообразия интерьеру придают контрастная глянцевая
+                вставка фартука и беспроигрышные дополнительные оттенки —тёмная древесина и белизна плафонов.
+              </p>
+              <h4>2. Какой лучше взять — серый или бежевый?</h4>
+              <p>Говоря о кухне в нейтральных тонах, наши заказчики обычно имеют в виду либо серую, либо бежевую гамму — а
+                ведь эти оттенки можно успешно сочетать в рамках одного помещения. Очень удачный пример на фото: в дизайне
+                гарнитура обыграли два оттенка серого, а стены и фартук оформили в бежевых тонах. Кстати, обеденная группа
+                тоже часть кухни, и здесь она стала полноценным продолжением композиции: сероватую поверхность стола
+                «подружили» со стульями разных древесных оттенков.</p>
+              <table>
+                <tr>
+                  <th>Heading 1</th>
+                  <th>Heading 2</th>
+                  <th>Heading 3</th>
+                </tr>
+                <tr>
+                  <td>Cell 1</td>
+                  <td>Cell 2</td>
+                  <td>Cell 3</td>
+                </tr>
+                <tr>
+                  <td>Cell 1</td>
+                  <td>Cell 2</td>
+                  <td>Cell 3</td>
+                </tr>
+                <tr>
+                  <td>Cell 1</td>
+                  <td>Cell 2</td>
+                  <td>Cell 3</td>
+                </tr>
+              </table>
+              <p>Говоря о кухне в нейтральных тонах, наши заказчики обычно имеют в виду либо серую, либо бежевую гамму — а
+                ведь эти оттенки можно успешно сочетать в рамках одного помещения. Очень удачный пример на фото: в дизайне
+                гарнитура обыграли два оттенка серого, а стены и фартук оформили в бежевых тонах. Кстати, обеденная группа
+                тоже часть кухни, и здесь она стала полноценным продолжением композиции: сероватую поверхность стола
+                «подружили» со стульями разных древесных оттенков:</p>
+              <ul>
+                <li>Черная пантера
+                <li>Сонный лес</li>
+                <li>Кипарисовая роща</li>
+              </ul>
+              <p>Наши заказчики порой отказываются от серого, потому что считают его мрачным — но дело, конечно, не в цвете,
+                а в его сочетании с другими оттенками. Разве выглядит тускло серый в сочетании с жёлтым? Проект на фото
+                смотрится, напротив, очень жизнерадостно. Обратите внимание, что композиция кухни симметрична, и серые
+                створки расположены по углам, а светлые — по центру: это распределение помогает сохранить визуальную
+                лёгкость интерьера.</p>
             </div>
           </div>
         </div>
-        <button class="header__btn header__btn--black js-header__btn">
-          <span>Меню</span>
-          <span class="is-opened">Закрыть</span>
-          <svg class="icon icon_size_l icon_burger is-opened" focusable="false">
-            <use xlink:href="#hamburger"></use>
-          </svg>
-          <svg class="icon icon_size_l icon_close" focusable="false">
-            <use xlink:href="#close"></use>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div class="header__menu js-header__menu">
-      <nav class="nav">
-        <div class="nav__left">
-          <ul class="nav__list">
-            <li class="nav__item js-nav__item" data-background="/img/nav__bg_1.jpg">
-              <a href="/" class="nav__link">Главная</a>
-            </li>
-            <li class="nav__item js-nav__item" data-background="/img/nav__bg_2.jpg">
-              <a href="categories.html" class="nav__link">Наши проекты</a>
-            </li>
-            <li class="nav__item js-nav__item" data-background="/img/nav__bg_3.jpg">
-              <a href="models-new.html" class="nav__link">Модельный ряд</a>
-            </li>
-            <li class="nav__item js-nav__item" data-background="/img/nav__bg_4.jpg">
-              <a href="article-list.html" class="nav__link">Покупателям</a>
-            </li>
-            <li class="nav__item js-nav__item" data-background="/img/nav__bg_5.jpg">
-              <a href="#" class="nav__link">Производство</a>
-            </li>
-            <li class="nav__item js-nav__item" data-background="/img/nav__bg_6.jpg">
-              <a href="#" class="nav__link">Отзывы</a>
-            </li>
-            <li class="nav__item js-nav__item" data-background="/img/nav__bg_7.jpg">
-              <a href="contacts.html" class="nav__link">Контакты</a>
-            </li>
-            <li class="nav__item nav__item_socials">
-              <div class="socials">
-                <!-- <div class="socials__item">
-                  <a href="#" class="socials__link">
-                    <svg class="socials__icon socials__icon_color_black">
-                      <use xlink:href="#icon-insragram"></use>
-                    </svg>
-                  </a>
-                </div> -->
-                <div class="socials__item">
-                  <a href="#" class="socials__link">
-                    <svg class="socials__icon socials__icon_color_black">
-                      <use xlink:href="#icon-vk"></use>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="nav__right">
-          <div class="nav__bg js-nav__bg" style="background-image: url(/img/nav__bg_default.jpg)"></div>
-        </div>
-      </nav>
-    </div>
-  </header>
-  <main class="main main_indent_inner js-header__main">
-    <div class="container container_user">
-      <div class="body__indent body__indent_m">
-        <div class="user-content user-content_page user-content_order_l">
-          <h1>Серый цвет на кухне — с чем его сочетать?</h1>
-          <p>Есть расхожее интерьерное правило: всё, что покупается в дом надолго, должно быть белым, серым или
-            деревянным — а цвет придёт вместе с бытом. Соглашусь. Другой вопрос: какой именно серый стоит взять для
-            кухни? Какой интенсивности, на каких фактурах и материалах его применить? — Объясню, как объясняю своим
-            заказчикам.</p>
-          <img src="/img/user-content__img-1.jpg" alt="img">
-          <h2>1. Серые стены и серая кухня — будет очень бледно?</h2>
-          <p>Нет, если правильно обыграть это сочетание, использовать разные оттенки и фактуры — например, бетон
-            с гладкими материалами. В моде всё брутальное и «грязноватое», к тому же, текстура у бетона и сама по себе
-            не скучная: неоднородность материала и разводы создают своеобразный рисунок. Кроме того, бетонный серый
-            легко уравновесить белыми и чёрными оттенками.
-          </p>
-          <p>Если брутальность бетона вам не близка, а идея тотально серого интерьера кажется неинтересной, обратите
-            внимание на классическое противопоставление матовых и глянцевых материалов. В проекте на фото лаконичная
-            серая кухня оформлена как единый крупный объём, но разнообразия интерьеру придают контрастная глянцевая
-            вставка фартука и беспроигрышные дополнительные оттенки —тёмная древесина и белизна плафонов.
-          </p>
-          <h2>2. Какой лучше взять — серый или бежевый?</h2>
-          <p>Говоря о кухне в нейтральных тонах, наши заказчики обычно имеют в виду либо серую, либо бежевую гамму — а
-            ведь эти оттенки можно успешно сочетать в рамках одного помещения. Очень удачный пример на фото: в дизайне
-            гарнитура обыграли два оттенка серого, а стены и фартук оформили в бежевых тонах. Кстати, обеденная группа
-            тоже часть кухни, и здесь она стала полноценным продолжением композиции: сероватую поверхность стола
-            «подружили» со стульями разных древесных оттенков.</p>
-          <table>
-            <tr>
-              <th>Heading 1</th>
-              <th>Heading 2</th>
-              <th>Heading 3</th>
-            </tr>
-            <tr>
-              <td>Cell 1</td>
-              <td>Cell 2</td>
-              <td>Cell 3</td>
-            </tr>
-            <tr>
-              <td>Cell 1</td>
-              <td>Cell 2</td>
-              <td>Cell 3</td>
-            </tr>
-            <tr>
-              <td>Cell 1</td>
-              <td>Cell 2</td>
-              <td>Cell 3</td>
-            </tr>
-          </table>
-          <p>Говоря о кухне в нейтральных тонах, наши заказчики обычно имеют в виду либо серую, либо бежевую гамму — а
-            ведь эти оттенки можно успешно сочетать в рамках одного помещения. Очень удачный пример на фото: в дизайне
-            гарнитура обыграли два оттенка серого, а стены и фартук оформили в бежевых тонах. Кстати, обеденная группа
-            тоже часть кухни, и здесь она стала полноценным продолжением композиции: сероватую поверхность стола
-            «подружили» со стульями разных древесных оттенков:</p>
-          <ul>
-            <li>Черная пантера
-            <li>Сонный лес</li>
-            <li>Кипарисовая роща</li>
-          </ul>
-          <p>Наши заказчики порой отказываются от серого, потому что считают его мрачным — но дело, конечно, не в цвете,
-            а в его сочетании с другими оттенками. Разве выглядит тускло серый в сочетании с жёлтым? Проект на фото
-            смотрится, напротив, очень жизнерадостно. Обратите внимание, что композиция кухни симметрична, и серые
-            створки расположены по углам, а светлые — по центру: это распределение помогает сохранить визуальную
-            лёгкость интерьера.</p>
-        </div>
-      </div>
-      <div class="body__indent body__indent_m">
         <section class="toggle-page">
-          <h2 class="visually-hidden">Постраничная навигация</h2>
           <a class="toggle-page__link" href="#">
-            <div class="toggle-page__img toggle-page__img_prev js-toggle-page__img"
-              data-image="/img/toggle-page__img-1.jpg">
-            </div>
-            <div class="toggle-page__box toggle-page__box_prev">
-              <p class="toggle-page__name">9 вариантов, где проходная кухня рядом с коридором</p>
-              <p class="toggle-page__arrow">
-                <svg class="icon icon_size_xs icon_second" focusable="false">
-                  <use xlink:href="#arrow-left"></use>
-                </svg> Предыдущая
-              </p>
+            <div class="toggle-page__img js-toggle-page__img" data-image="/img/toggle-page__img-1.jpg"></div>
+            <div class="toggle-page__box">
+              <p class="toggle-page__name">9 вариантов, где проходная кухня рядом с коридором</p>
+              <p class="toggle-page__arrow">← Предыдущая</p>
             </div>
           </a>
           <a class="toggle-page__link" href="#">
-            <div class="toggle-page__box toggle-page__box_next">
+            <div class="toggle-page__box">
               <p class="toggle-page__name">Как правильно: Освободить кухонный фартук</p>
-              <p class="toggle-page__arrow toggle-page__arrow_next">Следующая
-                <svg class="icon icon_size_xs icon_second" focusable="false">
-                  <use xlink:href="#arrow-right"></use>
-                </svg>
-              </p>
+              <p class="toggle-page__arrow">Следующая →</p>
             </div>
-            <div class="toggle-page__img toggle-page__img_next js-toggle-page__img"
-              data-image="/img/toggle-page__img-1.jpg"></div>
+            <div class="toggle-page__img js-toggle-page__img" data-image="/img/toggle-page__img-1.jpg"></div>
           </a>
         </section>
       </div>
     </div>
   </main>
   <footer class="footer">
-    <div class="container">
-      <div class="footer__wrapper">
-        <ul class="footer__left">
-          <li class="footer__item">
-            <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yQZ1" target="_blank" rel="noreferrer">
-              <svg class="icon icon_size_sm icon_brand" focusable="false">
-                <use xlink:href="#marker-map"></use>
-              </svg>
-              <span>Московская область, рабочий посёлок Новоивановское, ул. Агрохимиков, 1 (ТЦ «Мебель России»)</span>
-            </a>
-          </li>
-          <li class="footer__item">
-            <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yS3G" target="_blank" rel="noreferrer">
-              <svg class="icon icon_size_sm icon_brand" focusable="false">
-                <use xlink:href="#marker-map"></use>
-              </svg>
-              <span>Московская область, г. Красногорск, ул. Ленина, 2 (ТЦ «Красный кит»)</span>
-            </a>
-          </li>
-          <li class="footer__item">
-            <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yXOU" target="_blank" rel="noreferrer">
-              <svg class="icon icon_size_sm icon_brand" focusable="false">
-                <use xlink:href="#marker-map"></use>
-              </svg>
-              <span>Московская область, г. Мытищи, Шараповский проезд, 2с4</span>
-            </a>
-          </li>
-        </ul>
-        <div class="footer__right">
-          <a class="logo" href="index.html">
-            <svg class="icon icon_logo_footer" focusable="false">
-              <use xlink:href="#logo-footer"></use>
+  <div class="container">
+    <div class="footer__wrapper">
+      <ul class="footer__left">
+        <li class="footer__item">
+          <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yQZ1" target="_blank" rel="noreferrer">
+            <svg class="icon icon_size_sm icon_brand" focusable="false">
+              <use xlink:href="#marker-map"></use>
+            </svg>
+            <span>Московская область, рабочий посёлок Новоивановское, ул. Агрохимиков, 1 (ТЦ «Мебель России»)</span>
+          </a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yS3G" target="_blank" rel="noreferrer">
+            <svg class="icon icon_size_sm icon_brand" focusable="false">
+              <use xlink:href="#marker-map"></use>
+            </svg>
+            <span>Московская область, г. Красногорск, ул. Ленина, 2 (ТЦ «Красный кит»)</span>
+          </a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yXOU" target="_blank" rel="noreferrer">
+            <svg class="icon icon_size_sm icon_brand" focusable="false">
+              <use xlink:href="#marker-map"></use>
+            </svg>
+            <span>Московская область, г. Мытищи, Шараповский проезд, 2с4</span>
+          </a>
+        </li>
+      </ul>
+      <div class="footer__right">
+        <a class="footer__logo logo" href="index.html">
+          <svg focusable="false">
+            <use xlink:href="#logo-red-black"></use>
+          </svg>
+        </a>
+        <p class="footer__info p13">2014-<span id="currentYear"></span> ООО «Нестандартные кухни»</p>
+        <a class="footer__phone" href="tel:+74956425000">+7(495) 642-50-00</a>
+        <div class="footer__dev">
+          <a href="https://onlinebees.ru/" class="dev-block">
+            <svg class="dev-block__icon" focusable="false">
+              <use xlink:href="#dev"></use>
             </svg>
           </a>
-          <p class="footer__info p13">2014-<span id="currentYear"></span> ООО «Нестандартные кухни»</p>
-          <a class="footer__phone" href="tel:+74956425000">+7(495) 642-50-00</a>
-          <div class="footer__dev">
-            <a href="https://onlinebees.ru/" class="dev-block">
-              <div class="dev-block__caption">
-                Сделано в
-              </div>
-              <svg class="dev-block__icon" focusable="false">
-                <use xlink:href="#shape"></use>
-              </svg>
-              <div class="dev-block__bold-caption">
-                ONLINEBEES
-              </div>
-            </a>
-          </div>
         </div>
       </div>
     </div>
-  </footer>
-  <div class="pattern pattern_small"></div>
-
-  <a href="#popup-form" class="promo-code promo-code_fixed button button_brand js-button_popup-promo " data-effect="mfp-zoom-in">
-    <span>Заявка на просчет</span>
-  </a>
-
-  <div class="popup mfp-with-anim mfp-hide" id="popup-form">
-    <form class="form" action="#">
-      <div class="form-group">
-        <input class="form-control" id="name" type="text" autocomplete="on" required>
-        <span class="form__line"></span>
-        <label class="control-label" for="name">Как Вас зовут?</label>
-      </div>
-      <div class="form-group has-error">
-        <input class="form-control" id="phone" type="tel" autocomplete="on" required>
-        <span class="form__line"></span>
-        <label class="control-label" for="phone">Номер телефона</label>
-        <div class="help-block">Поле обязательно к заполнению</div>
-      </div>
-      <div class="form-group has-access">
-        <input class="form-control" id="email" type="email" autocomplete="on" required>
-        <span class="form__line"></span>
-        <label class="control-label" for="email">email</label>
-      </div>
-      <div class="form-group">
-        <textarea class="form-control form-control_textarea" id="message" name="message"></textarea>
-        <span class="form__line"></span>
-        <label class="control-label" for="message">Комментарий к заявке</label>
-      </div>
-      <div class="form-group">
-        <input type="file">
-      </div>
-
-      <button class="button button_brand button_size_m button_centered"><span>Отправить</span></button>
-    </form>
-    <div class="popup__thanks">
-      <!-- display: block for open -->
-      <p class="popup__text">Спасибо за заявку!</p>
-      <p class="popup__text">Наши менеджеры свяжутся с вами в ближайшее время!</p>
-    </div>
   </div>
+</footer>
+  <div class="pattern pattern--small pattern--small-top"></div>
+<div class="pattern pattern--small pattern--small-bottom"></div>
+
+
 <script type="text/javascript" src="/js/common.js"></script></body>
 
 </html>

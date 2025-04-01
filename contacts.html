@@ -18,99 +18,284 @@
 <link href="/css/common.css" rel="stylesheet"></head>
 
 <body class="body">
-  <header class="header js-header">
-    <div class="container">
-      <div class="header__wrapper">
-        <a class="logo logo_header js-header__logo" href="index.html" aria-label="Логотип">
-          <img class="image image_logo is-opened" src="/img/logo-black.svg" alt="Логотип Нестандартные кухни">
-          <svg class="icon icon_logo icon_logo_nav image_logo image_logo_black" focusable="false">
-            <use xlink:href="#logo-black"></use>
-          </svg>
-          <svg class="icon icon_logo icon_logo_nav image_logo_white" focusable="false">
-            <use xlink:href="#logo-white"></use>
-          </svg>
-        </a>
-        <div class="header__socials">
-          <div class="socials">
-            <!-- <div class="socials__item">
-              <a href="#" class="socials__link">
-                <svg class="socials__icon socials__icon_color_black">
-                  <use xlink:href="#icon-insragram"></use>
-                </svg>
-              </a>
-            </div> -->
-            <div class="socials__item">
-              <a href="#" class="socials__link">
-                <svg class="socials__icon socials__icon_color_black">
-                  <use xlink:href="#icon-vk"></use>
-                </svg>
-              </a>
-            </div>
+  <header class="header header--black js-header">
+  <div class="container">
+    <div class="header__wrapper">
+      <a class="logo header__logo js-header__logo" href="index.html" aria-label="Логотип">
+        <svg class="logo__black-white" focusable="false">
+          <use xlink:href="#logo-black-white"></use>
+        </svg>
+        <svg class="logo__red-black" focusable="false">
+          <use xlink:href="#logo-red-black"></use>
+        </svg>
+        <svg class="logo__red-white" focusable="false">
+          <use xlink:href="#logo-red-white"></use>
+        </svg>
+      </a>
+      <div class="header__socials">
+        <div class="socials">
+          <div class="socials__item">
+            <a href="#" class="socials__link">
+              <svg class="socials__icon socials__icon_color_black">
+                <use xlink:href="#icon-vk"></use>
+              </svg>
+            </a>
           </div>
         </div>
-        <button class="header__btn header__btn--black js-header__btn">
-          <span>Меню</span>
-          <span class="is-opened">Закрыть</span>
-          <svg class="icon icon_size_l icon_burger is-opened" focusable="false">
-            <use xlink:href="#hamburger"></use>
+      </div>
+      <div class="header__btn-group">
+        <button class="header__btn-catalog-desktop button button--brand">
+          <svg focusable="false">
+            <use xlink:href="#catalog"></use>
           </svg>
-          <svg class="icon icon_size_l icon_close" focusable="false">
-            <use xlink:href="#close"></use>
-          </svg>
+          <span>Каталог</span>
         </button>
+        <div class="header__burger">
+          <div class="burger-before"></div>
+          <button class="burger">
+            <div class="burger__text">меню</div>
+            <div class="burger__icon">
+              <div class="burger__inner">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </button>
+        </div>
       </div>
     </div>
-    <div class="header__menu js-header__menu">
-      <nav class="nav">
-        <div class="nav__left">
-          <ul class="nav__list">
-            <li class="nav__item js-nav__item" data-background="/img/nav__bg_1.jpg">
-              <a href="/" class="nav__link">Главная</a>
-            </li>
-            <li class="nav__item js-nav__item" data-background="/img/nav__bg_2.jpg">
-              <a href="categories.html" class="nav__link">Наши проекты</a>
-            </li>
-            <li class="nav__item js-nav__item" data-background="/img/nav__bg_3.jpg">
-              <a href="models-new.html" class="nav__link">Модельный ряд</a>
-            </li>
-            <li class="nav__item js-nav__item" data-background="/img/nav__bg_4.jpg">
-              <a href="article-list.html" class="nav__link">Покупателям</a>
-            </li>
-            <li class="nav__item js-nav__item" data-background="/img/nav__bg_5.jpg">
-              <a href="#" class="nav__link">Производство</a>
-            </li>
-            <li class="nav__item js-nav__item" data-background="/img/nav__bg_6.jpg">
-              <a href="#" class="nav__link">Отзывы</a>
-            </li>
-            <li class="nav__item js-nav__item" data-background="/img/nav__bg_7.jpg">
-              <a href="contacts.html" class="nav__link">Контакты</a>
-            </li>
-            <li class="nav__item nav__item_socials">
-              <div class="socials">
-                <!-- <div class="socials__item">
-                  <a href="#" class="socials__link">
-                    <svg class="socials__icon socials__icon_color_black">
-                      <use xlink:href="#icon-insragram"></use>
-                    </svg>
-                  </a>
-                </div> -->
-                <div class="socials__item">
-                  <a href="#" class="socials__link">
-                    <svg class="socials__icon socials__icon_color_black">
-                      <use xlink:href="#icon-vk"></use>
-                    </svg>
-                  </a>
-                </div>
+  </div>
+  <div class="header__menu js-header__menu">
+    <nav class="nav">
+      <div class="nav__left">
+        <ul class="nav__list">
+          <li class="nav__item nav__item_catalog">
+            <button class="header__btn-catalog-mobile button button--brand">
+              <svg focusable="false">
+                <use xlink:href="#catalog"></use>
+              </svg>
+              <span>Каталог</span>
+            </button>
+          </li>
+          <li class="nav__item js-nav__item" data-background="/img/nav__bg_1.jpg">
+            <a href="/" class="nav__link">Главная</a>
+          </li>
+          <li class="nav__item js-nav__item" data-background="/img/nav__bg_2.jpg">
+            <a href="categories.html" class="nav__link">Наши проекты</a>
+          </li>
+          <li class="nav__item js-nav__item" data-background="/img/nav__bg_3.jpg">
+            <a href="models-new.html" class="nav__link">Модельный ряд</a>
+          </li>
+          <li class="nav__item js-nav__item" data-background="/img/nav__bg_4.jpg">
+            <a href="article-list.html" class="nav__link">Покупателям</a>
+          </li>
+          <li class="nav__item js-nav__item" data-background="/img/nav__bg_5.jpg">
+            <a href="manufacture.html" class="nav__link">Производство</a>
+          </li>
+          <li class="nav__item js-nav__item" data-background="/img/nav__bg_6.jpg">
+            <a href="reviews.html" class="nav__link">Отзывы</a>
+          </li>
+          <li class="nav__item js-nav__item" data-background="/img/nav__bg_7.jpg">
+            <a href="contacts.html" class="nav__link">Контакты</a>
+          </li>
+          <li class="nav__item nav__item_socials">
+            <div class="socials">
+              <div class="socials__item">
+                <a href="#" class="socials__link">
+                  <svg class="socials__icon socials__icon_color_black">
+                    <use xlink:href="#icon-vk"></use>
+                  </svg>
+                </a>
               </div>
-            </li>
-          </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="nav__right">
+        <div class="nav__bg js-nav__bg" style="background-image: url(/img/nav__bg_default.jpg)"></div>
+      </div>
+    </nav>
+  </div>
+  <div class="menu">
+    <div class="menu__inner simplebar">
+        <div class="container">
+            <div class="menu__back">
+                <svg focusable="false">
+                    <use xlink:href="#keyboard-arrow-right"></use>
+                </svg>
+                <span>Назад</span>
+            </div>
+            <div class="menu__categories">
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дорогие, элитные, премиум</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Золото</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Золото</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бронза</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бетон</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дорогие, элитные, премиум</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Антрацит</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Светлые</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Золото</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бронза</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бетон</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Золото</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бронза</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бетон</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Серый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Антрацит</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дорогие, элитные, премиум</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бронза</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бетон</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Серый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Антрацит</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Светлые</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Золото</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бронза</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бетон</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Серый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Антрацит</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Светлые</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                    </ul>
+                </div>
+                <div class="menu__wrap">
+                    <div class="menu__wrap-title">
+                        <span>Цвет</span>
+                        <svg focusable="false">
+                            <use xlink:href="#keyboard-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul class="menu__wrap-list">
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Белый</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Дерево</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Золото</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бронза</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Бетон</a></li>
+                        <li class="menu__wrap-item"><a class="menu__wrap-link" href="">Серый</a></li>
+                    </ul>
+                </div>
+                <a class="menu__link-all" href="">
+                    <span>Смотреть весь каталог</span>
+                    <svg focusable="false">
+                        <use xlink:href="#keyboard-arrow-right"></use>
+                    </svg>
+                </a>
+            </div>
         </div>
-        <div class="nav__right">
-          <div class="nav__bg js-nav__bg" style="background-image: url(/img/nav__bg_default.jpg)"></div>
-        </div>
-      </nav>
     </div>
-  </header>
+</div>
+</header>
+
+<noscript>
+  <style>
+    /**
+    * Reinstate scrolling for non-JS clients
+    */
+    .simplebar-content-wrapper {
+      scrollbar-width: auto;
+      -ms-overflow-style: auto;
+    }
+
+    .simplebar-content-wrapper::-webkit-scrollbar,
+    .simplebar-hide-scrollbar::-webkit-scrollbar {
+      display: initial;
+      width: initial;
+      height: initial;
+    }
+  </style>
+</noscript>
   <main class="main main_indent_inner js-header__main">
 
     <section class="contacts">
@@ -123,9 +308,11 @@
               </li>
               <li class="breadcrumbs__item">Контакты</li>
             </ul>
-            <div class="title-wrap">
-              <div class="square square_small js-square_small"></div>
-              <h1 class="contacts__title">Контакты</h1>
+            <div class="head-info__info">
+              <div class="head-info__title-wrap">
+                <div class="square square_small js-square_small"></div>
+                <h1 class="head-info__title">Контакты</h1>
+              </div>
             </div>
             <div class="contacts__wrap">
               <div class="contacts__left">
@@ -229,101 +416,56 @@
 
   </main>
   <footer class="footer">
-    <div class="container">
-      <div class="footer__wrapper">
-        <ul class="footer__left">
-          <li class="footer__item">
-            <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yQZ1" target="_blank" rel="noreferrer">
-              <svg class="icon icon_size_sm icon_brand" focusable="false">
-                <use xlink:href="#marker-map"></use>
-              </svg>
-              <span>Московская область, рабочий посёлок Новоивановское, ул. Агрохимиков, 1 (ТЦ «Мебель России»)</span>
-            </a>
-          </li>
-          <li class="footer__item">
-            <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yS3G" target="_blank" rel="noreferrer">
-              <svg class="icon icon_size_sm icon_brand" focusable="false">
-                <use xlink:href="#marker-map"></use>
-              </svg>
-              <span>Московская область, г. Красногорск, ул. Ленина, 2 (ТЦ «Красный кит»)</span>
-            </a>
-          </li>
-          <li class="footer__item">
-            <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yXOU" target="_blank" rel="noreferrer">
-              <svg class="icon icon_size_sm icon_brand" focusable="false">
-                <use xlink:href="#marker-map"></use>
-              </svg>
-              <span>Московская область, г. Мытищи, Шараповский проезд, 2с4</span>
-            </a>
-          </li>
-        </ul>
-        <div class="footer__right">
-          <a class="logo" href="index.html">
-            <svg class="icon icon_logo_footer" focusable="false">
-              <use xlink:href="#logo-footer"></use>
+  <div class="container">
+    <div class="footer__wrapper">
+      <ul class="footer__left">
+        <li class="footer__item">
+          <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yQZ1" target="_blank" rel="noreferrer">
+            <svg class="icon icon_size_sm icon_brand" focusable="false">
+              <use xlink:href="#marker-map"></use>
+            </svg>
+            <span>Московская область, рабочий посёлок Новоивановское, ул. Агрохимиков, 1 (ТЦ «Мебель России»)</span>
+          </a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yS3G" target="_blank" rel="noreferrer">
+            <svg class="icon icon_size_sm icon_brand" focusable="false">
+              <use xlink:href="#marker-map"></use>
+            </svg>
+            <span>Московская область, г. Красногорск, ул. Ленина, 2 (ТЦ «Красный кит»)</span>
+          </a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link p13" href="https://yandex.ru/maps/-/CGv1yXOU" target="_blank" rel="noreferrer">
+            <svg class="icon icon_size_sm icon_brand" focusable="false">
+              <use xlink:href="#marker-map"></use>
+            </svg>
+            <span>Московская область, г. Мытищи, Шараповский проезд, 2с4</span>
+          </a>
+        </li>
+      </ul>
+      <div class="footer__right">
+        <a class="footer__logo logo" href="index.html">
+          <svg focusable="false">
+            <use xlink:href="#logo-red-black"></use>
+          </svg>
+        </a>
+        <p class="footer__info p13">2014-<span id="currentYear"></span> ООО «Нестандартные кухни»</p>
+        <a class="footer__phone" href="tel:+74956425000">+7(495) 642-50-00</a>
+        <div class="footer__dev">
+          <a href="https://onlinebees.ru/" class="dev-block">
+            <svg class="dev-block__icon" focusable="false">
+              <use xlink:href="#dev"></use>
             </svg>
           </a>
-          <p class="footer__info p13">2014-<span id="currentYear"></span> ООО «Нестандартные кухни»</p>
-          <a class="footer__phone" href="tel:+74956425000">+7(495) 642-50-00</a>
-          <div class="footer__dev">
-            <a href="https://onlinebees.ru/" class="dev-block">
-              <div class="dev-block__caption">
-                Сделано в
-              </div>
-              <svg class="dev-block__icon" focusable="false">
-                <use xlink:href="#shape"></use>
-              </svg>
-              <div class="dev-block__bold-caption">
-                ONLINEBEES
-              </div>
-            </a>
-          </div>
         </div>
       </div>
     </div>
-  </footer>
-  <div class="pattern pattern_small"></div>
-  <div class="pattern pattern_small pattern_contact_right"></div>
-
-  <a href="#popup-form" class="promo-code promo-code_fixed button button_brand js-button_popup-promo " data-effect="mfp-zoom-in">
-    <span>Заявка на просчет</span>
-  </a>
-
-  <div class="popup mfp-with-anim mfp-hide" id="popup-form">
-    <form class="form" action="#">
-      <div class="form-group">
-        <input class="form-control" id="name" type="text" autocomplete="on" required>
-        <span class="form__line"></span>
-        <label class="control-label" for="name">Как Вас зовут?</label>
-      </div>
-      <div class="form-group has-error">
-        <input class="form-control" id="phone" type="tel" autocomplete="on" required>
-        <span class="form__line"></span>
-        <label class="control-label" for="phone">Номер телефона</label>
-        <div class="help-block">Поле обязательно к заполнению</div>
-      </div>
-      <div class="form-group has-access">
-        <input class="form-control" id="email" type="email" autocomplete="on" required>
-        <span class="form__line"></span>
-        <label class="control-label" for="email">email</label>
-      </div>
-      <div class="form-group">
-        <textarea class="form-control form-control_textarea" id="message" name="message"></textarea>
-        <span class="form__line"></span>
-        <label class="control-label" for="message">Комментарий к заявке</label>
-      </div>
-      <div class="form-group">
-        <input type="file">
-      </div>
-
-      <button class="button button_brand button_size_m button_centered"><span>Отправить</span></button>
-    </form>
-    <div class="popup__thanks">
-      <!-- display: block for open -->
-      <p class="popup__text">Спасибо за заявку!</p>
-      <p class="popup__text">Наши менеджеры свяжутся с вами в ближайшее время!</p>
-    </div>
   </div>
+</footer>
+  <div class="pattern pattern--small pattern--small-top"></div>
+<div class="pattern pattern--small pattern--small-bottom"></div>
+
 <script type="text/javascript" src="/js/common.js"></script></body>
 
 </html>
