@@ -17,7 +17,6 @@
 <link href="/css/common.css" rel="stylesheet"></head>
 
 <body class="body">
-  <div class="body__bg js-category__bg"></div>
   <header class="header header--black js-header">
   <div class="container">
     <div class="header__wrapper">
@@ -298,51 +297,19 @@
 </noscript>
   <main class="main main_indent_inner js-header__main">
     <div class="container">
-      <div class="body__indent body__indent_m">
-        <h1 class="title title_one title_indent_m title_width_auto">Страница не найдена</h1>
-        <div class="user-content user-content_small user-content_center user-content_order_m">
-          <p>Ой! Мы не смогли найти такую страницу на нашем сайте. Мы не знаем, была она удалена или похищена
-            инопланетянами, но знаем точно, что все наши кухни на месте и вы можете перейти в интересующую вас
-            категорию для их просмотра. Также вы можете <a class="link link_brand" href="index.html">перейти в начало
-              сайта</a>.</p>
+      <div class="container-grid">
+        <div class="container-grid__10">
+          <div class="four-and-four">
+            <div class="four-and-four__wrap">
+              <div class="square square_small js-square_small"></div>
+              <span>404</span>
+              <h2 class="four-and-four__title">страница не найдена</h2>
+            </div>
+            <p class="four-and-four__desc p16">Кажется что‑то пошло не так. Запрашиваемая вами страница не существует. Возможно она была удалена или был введён неверный адрес в адресной строке</p>
+            <a class="button button--border" href="/">Вернуться на главную</a>
+          </div>
         </div>
       </div>
-      <section class="categories categories_404">
-        <ul class="categories__grid">
-          <li class="categories__item">
-            <a href="#" class="categories__link">
-              <img class="image" src="/img/categories__img_small-1.jpg" alt="img">
-              <div class="categories__content">
-                <h2 class="title title_four">Лофт</h2>
-              </div>
-            </a>
-          </li>
-          <li class="categories__item">
-            <a href="#" class="categories__link">
-              <img class="image" src="/img/categories__img_small-2.jpg" alt="img">
-              <div class="categories__content">
-                <h2 class="title title_four">Хай-Тек</h2>
-              </div>
-            </a>
-          </li>
-          <li class="categories__item">
-            <a href="#" class="categories__link">
-              <img class="image" src="/img/categories__img_small-3.jpg" alt="img">
-              <div class="categories__content">
-                <h2 class="title title_four">Классика</h2>
-              </div>
-            </a>
-          </li>
-          <li class="categories__item">
-            <a href="#" class="categories__link">
-              <img class="image" src="/img/categories__img_small-4.jpg" alt="img">
-              <div class="categories__content">
-                <h2 class="title title_four">Неоклассика</h2>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </section>
     </div>
   </main>
   <footer class="footer">
@@ -393,7 +360,8 @@
     </div>
   </div>
 </footer>
-  <div class="pattern pattern--small"></div>
+  <div class="pattern pattern--small pattern--small-top"></div>
+<div class="pattern pattern--small pattern--small-bottom"></div>
 
 <script type="text/javascript" src="/js/common.js"></script></body>
 
