@@ -7,19 +7,6 @@ import type { ID } from '@/types/ID'
 
 const { handleCallback } = useHandleCallback()
 const { openSuccessModal, openFailureModal } = useFeedback()
-const {
-  animateSplitText,
-  animateDrawRandomUnderline,
-  animate3DPerspective,
-  animateStackingCards,
-  animateHomeScreen,
-  animateHomeScreenOnScroll,
-  animateParallax,
-  animateFadeInBottom,
-  waitForDOMReady
-} = useAnimate()
-
-const isDomReady = ref<boolean>(false)
 const isOverlayMap = ref<boolean>(true)
 
 // const { data, error } = await useFetch<any>('/api/home/')
@@ -690,21 +677,6 @@ const hideOverlayMap = () => {
 }
 
 onMounted(() => {
-  waitForDOMReady(() => {
-    isDomReady.value = true
-    animateHomeScreen()
-    animateParallax()
-    setTimeout(() => {
-      animateHomeScreenOnScroll()
-      animateFadeInBottom()
-    }, 1700)
-  })
-
-  initCarousel()
-  animateSplitText()
-  animateDrawRandomUnderline()
-  animate3DPerspective()
-  animateStackingCards()
   window.addEventListener('resize', () => {
     handleResize()
   })
@@ -720,27 +692,6 @@ onUnmounted(() => {
 
 <template>
   <main>
-    <transition name="fade-preloader">
-      <AppPreloader v-if="!isDomReady" />
-    </transition>
-
-    <section class="advantages">
-      <div class="container">
-        <div class="gsap-container-split-text">
-          <h2 class="advantages__title typo-h2 gsap-split-text" v-html="data.advantages.title" />
-        </div>
-        <div class="advantages__list gsap-fade-container">
-          <CardAdvantages v-for="item in data.advantages.items" :key="item.id" :card="item" class="gsap-fade-item" />
-        </div>
-      </div>
-    </section>
-
-    <section class="quiz">
-      <div class="container gsap-fade-container">
-        <div class="gsap-fade-item" v-html="data.marquiz" />
-      </div>
-    </section>
-
     <section class="work">
       <div class="container gsap-fade-container">
         <div class="work__frame gsap-fade-item">
