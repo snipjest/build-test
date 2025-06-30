@@ -692,35 +692,6 @@ onUnmounted(() => {
 
 <template>
   <main>
-    <section class="work">
-      <div class="container gsap-fade-container">
-        <div class="work__frame gsap-fade-item">
-          <div class="work__bg">
-            <img class="work__bg-img" src="/images/work-bg-1.png" alt="" />
-            <img class="work__bg-img" src="/images/work-bg-2.png" alt="" />
-          </div>
-          <div class="work__content">
-            <h2 class="work__title typo-h3" v-html="data.work.title" />
-            <ul class="work__list">
-              <li v-for="item in data.work.list" :key="item.id" class="work__list-item typo-p3">{{ item.text }}</li>
-            </ul>
-            <button class="work__btn btn btn--primary" @click="handleCallback">Начать сотрудничество</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects">
-      <div class="container">
-        <div class="gsap-container-split-text">
-          <h2 class="projects__title typo-h2 gsap-split-text" v-html="data.projects.title" />
-        </div>
-        <div class="projects__list gsap-fade-container">
-          <CardProject v-for="item in data.projects.items" :key="item.id" :card="item" class="gsap-fade-item" />
-        </div>
-      </div>
-    </section>
-
     <section class="offer gsap-perspective">
       <div class="container">
         <div class="offer__wrap gsap-fade-container">
