@@ -601,13 +601,6 @@ const onSubmitFailure = () => {
   openFailureModal()
 }
 
-const marqueeSettings = {
-  duration: 40,
-  pauseOnHover: false,
-  direction: 'right',
-  loop: 0
-}
-
 const swiperRef = ref<HTMLElement | null>(null)
 let swiperInstance: Swiper | null = null
 
@@ -725,27 +718,6 @@ onUnmounted(() => {
     </section>
 
     <div class="gsap-stacking-card-end" />
-
-    <section class="partners">
-      <div class="gsap-container-split-text">
-        <h2 class="partners__title typo-h2 gsap-split-text" v-html="data.partners.title" />
-      </div>
-      <div class="gsap-fade-container">
-        <div class="gsap-fade-item">
-          <Vue3Marquee
-            :duration="marqueeSettings.duration"
-            :pause-on-hover="marqueeSettings.pauseOnHover"
-            :direction="marqueeSettings.direction"
-            :loop="marqueeSettings.loop"
-            :clone="true"
-          >
-            <div v-for="item in data.partners.list" :key="item.id" class="partners__item">
-              <img class="partners__img" :src="item.image.url" :alt="item.image.alt" />
-            </div>
-          </Vue3Marquee>
-        </div>
-      </div>
-    </section>
 
     <section class="director">
       <div class="container gsap-fade-container">
