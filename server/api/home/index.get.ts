@@ -5,11 +5,5 @@ export default defineEventHandler(async () => {
   const baseUrl = config.public.baseUrl
 
   // Если baseUrl не задан — возвращаем mock-данные
-  if (!baseUrl) {
-    return data
-  }
-
-  // Иначе — запрос к удалённому серверу
-  const response: any = await $fetch(`${baseUrl}/api/home/`)
-  return response
+  return data
 })
