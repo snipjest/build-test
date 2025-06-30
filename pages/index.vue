@@ -3,7 +3,10 @@ import { view } from '@/constants'
 import Swiper from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import type { ID } from '@/types/ID'
 
+const { handleCallback } = useHandleCallback()
+const { openSuccessModal, openFailureModal } = useFeedback()
 const {
   animateSplitText,
   animateDrawRandomUnderline,
@@ -17,6 +20,7 @@ const {
 } = useAnimate()
 
 const isDomReady = ref<boolean>(false)
+const isOverlayMap = ref<boolean>(true)
 
 // const { data, error } = await useFetch<any>('/api/home/')
 
@@ -27,6 +31,605 @@ const isDomReady = ref<boolean>(false)
 //     fatal: true
 //   })
 // }
+
+const data = {
+  seo: {
+    meta: {
+      title: 'Строительство домов в Пензе и Пензенской области',
+      ogTitle: 'Строительство домов в Пензе и Пензенской области',
+      description: 'Это описание для страницы Главная страница',
+      ogDescription: 'Это описание для страницы Главная страница',
+      ogImage: '/images/arhitektor.jpg',
+      twitterCard: 'summary_large_image',
+      robots: 'noindex'
+    },
+    H1: 'Строительство домов в Пензе и Пензенской области',
+    content: null
+  },
+  schemaOrg: [],
+  homeScreen: {
+    title: 'Строительство домов<br>в Пензе и Пензенской области',
+    image: {
+      url: '/images/home-bg.jpg',
+      alt: 'текст описания'
+    },
+    description:
+      'По индивидуальному или готовому дизайн проекту,  c расширенной гарантием до 5 лет и сроком эксплуатации от 150 лет',
+    advantages: [
+      {
+        id: 1,
+        label: '120 дней',
+        description: 'От согласования проекта, до окончания строительства'
+      },
+      {
+        id: 2,
+        label: '0% переплат',
+        description: 'Цена не изменится в процессе строительства'
+      }
+    ]
+  },
+  advantages: {
+    title: 'Подбираем решения<br>под ваши задачи',
+    items: [
+      {
+        id: 1,
+        label: 'Команда профессионалов',
+        description: 'Превращаем ваши идеи в дом мечты'
+      },
+      {
+        id: 2,
+        label: 'Гарантированное качество',
+        description: 'Работа по договор, гарантийное и постгарантийное обслуживание и сопровождение'
+      },
+      {
+        id: 3,
+        label: 'Соблюдаем сроки и смету',
+        description: 'Отчеты по каждому этапу работ, смета (стоимость) не меняется на всем протяжении работ'
+      },
+      {
+        id: 4,
+        label: 'Индивидуальные проекты',
+        description: 'Работаем для вас выполняя самые сокровенные желания'
+      }
+    ]
+  },
+  marquiz: 'marquiz',
+  work: {
+    title: 'Наша работа — под вашим контролем',
+    list: [
+      {
+        id: 1,
+        text: 'Фотоочеты о ходе строительства по WhatsApp'
+      },
+      {
+        id: 2,
+        text: 'Персональный менеджер для оперативного решения всех вопросов'
+      },
+      {
+        id: 3,
+        text: 'Технадзор при приемке этапов работ по чек-листам'
+      }
+    ]
+  },
+  projects: {
+    title: 'Реализованные проекты',
+    items: [
+      {
+        id: 1,
+        gallery: [
+          {
+            id: 1,
+            image: {
+              url: '/images/projects/project-1/project-1.png',
+              alt: 'текст описания'
+            }
+          },
+          {
+            id: 2,
+            image: {
+              url: '/images/projects/project-1/project-2.png',
+              alt: 'текст описания'
+            }
+          },
+          {
+            id: 3,
+            image: {
+              url: '/images/projects/project-1/project-3.png',
+              alt: 'текст описания'
+            }
+          }
+        ],
+        label: 'Одноэтажный дом Magnat, 130 м2',
+        parameters: [
+          {
+            id: 1,
+            label: 'Стоимость',
+            value: 'от 90 тыс. ₽ / м2'
+          },
+          {
+            id: 2,
+            label: 'Тип дома',
+            value: 'Быстровозводимый'
+          },
+          {
+            id: 3,
+            label: 'Срок строительства',
+            value: 'от 3 мес.'
+          }
+        ]
+      },
+      {
+        id: 2,
+        gallery: [
+          {
+            id: 1,
+            image: {
+              url: '/images/projects/project-1/project-2.png',
+              alt: 'текст описания'
+            }
+          },
+          {
+            id: 2,
+            image: {
+              url: '/images/projects/project-1/project-1.png',
+              alt: 'текст описания'
+            }
+          },
+          {
+            id: 3,
+            image: {
+              url: '/images/projects/project-1/project-3.png',
+              alt: 'текст описания'
+            }
+          }
+        ],
+        label: 'Одноэтажный дом Aura, 170 м2',
+        parameters: [
+          {
+            id: 1,
+            label: 'Стоимость',
+            value: 'от 90 тыс. ₽ / м2'
+          },
+          {
+            id: 2,
+            label: 'Тип дома',
+            value: 'Быстровозводимый'
+          },
+          {
+            id: 3,
+            label: 'Срок строительства',
+            value: 'от 3 мес.'
+          }
+        ]
+      },
+      {
+        id: 3,
+        gallery: [
+          {
+            id: 1,
+            image: {
+              url: '/images/projects/project-1/project-3.png',
+              alt: 'текст описания'
+            }
+          },
+          {
+            id: 2,
+            image: {
+              url: '/images/projects/project-1/project-2.png',
+              alt: 'текст описания'
+            }
+          },
+          {
+            id: 3,
+            image: {
+              url: '/images/projects/project-1/project-1.png',
+              alt: 'текст описания'
+            }
+          }
+        ],
+        label: 'Двухэтажный дом Luna, 210 м2',
+        parameters: [
+          {
+            id: 1,
+            label: 'Стоимость',
+            value: 'от 90 тыс. ₽ / м2'
+          },
+          {
+            id: 2,
+            label: 'Тип дома',
+            value: 'Быстровозводимый'
+          },
+          {
+            id: 3,
+            label: 'Срок строительства',
+            value: 'от 3 мес.'
+          }
+        ]
+      },
+      {
+        id: 4,
+        gallery: [
+          {
+            id: 1,
+            image: {
+              url: '/images/projects/project-1/project-1.png',
+              alt: 'текст описания'
+            }
+          },
+          {
+            id: 2,
+            image: {
+              url: '/images/projects/project-1/project-2.png',
+              alt: 'текст описания'
+            }
+          },
+          {
+            id: 3,
+            image: {
+              url: '/images/projects/project-1/project-3.png',
+              alt: 'текст описания'
+            }
+          }
+        ],
+        label: 'Одноэтажный дом Magnat, 130 м2',
+        parameters: [
+          {
+            id: 1,
+            label: 'Стоимость',
+            value: 'от 90 тыс. ₽ / м2'
+          },
+          {
+            id: 2,
+            label: 'Тип дома',
+            value: 'Быстровозводимый'
+          },
+          {
+            id: 3,
+            label: 'Срок строительства',
+            value: 'от 3 мес.'
+          }
+        ]
+      },
+      {
+        id: 5,
+        gallery: [
+          {
+            id: 1,
+            image: {
+              url: '/images/projects/project-1/project-2.png',
+              alt: 'текст описания'
+            }
+          },
+          {
+            id: 2,
+            image: {
+              url: '/images/projects/project-1/project-1.png',
+              alt: 'текст описания'
+            }
+          },
+          {
+            id: 3,
+            image: {
+              url: '/images/projects/project-1/project-3.png',
+              alt: 'текст описания'
+            }
+          }
+        ],
+        label: 'Одноэтажный дом Aura, 170 м2',
+        parameters: [
+          {
+            id: 1,
+            label: 'Стоимость',
+            value: 'от 90 тыс. ₽ / м2'
+          },
+          {
+            id: 2,
+            label: 'Тип дома',
+            value: 'Быстровозводимый'
+          },
+          {
+            id: 3,
+            label: 'Срок строительства',
+            value: 'от 3 мес.'
+          }
+        ]
+      },
+      {
+        id: 6,
+        gallery: [
+          {
+            id: 1,
+            image: {
+              url: '/images/projects/project-1/project-3.png',
+              alt: 'текст описания'
+            }
+          },
+          {
+            id: 2,
+            image: {
+              url: '/images/projects/project-1/project-2.png',
+              alt: 'текст описания'
+            }
+          },
+          {
+            id: 3,
+            image: {
+              url: '/images/projects/project-1/project-1.png',
+              alt: 'текст описания'
+            }
+          }
+        ],
+        label: 'Двухэтажный дом Luna, 210 м2',
+        parameters: [
+          {
+            id: 1,
+            label: 'Стоимость',
+            value: 'от 90 тыс. ₽ / м2'
+          },
+          {
+            id: 2,
+            label: 'Тип дома',
+            value: 'Быстровозводимый'
+          },
+          {
+            id: 3,
+            label: 'Срок строительства',
+            value: 'от 3 мес.'
+          }
+        ]
+      }
+    ]
+  },
+  offer: {
+    image: {
+      url: '/images/offer-bg.jpg',
+      alt: 'текст описания'
+    },
+    advantage: {
+      label: '5 лет',
+      description: 'Расширенная гарантия. Авторский надзор на всех этапах строительства'
+    }
+  },
+  typesWork: {
+    title: 'От эскиза до воплощения — <br> наш пошаговый путь к вашему уютному дому',
+    list: [
+      {
+        id: 1,
+        image: {
+          url: '/images/type-of-work/type-1.jpg',
+          alt: 'текст описания'
+        },
+        text: 'Подготавливаем участок под забивку свай или под ленточный фундамент'
+      },
+      {
+        id: 2,
+        image: {
+          url: '/images/type-of-work/type-2.jpg',
+          alt: 'текст описания'
+        },
+        text: 'Подводим коммуникации — электрику, водопровод и канализацию'
+      },
+      {
+        id: 3,
+        image: {
+          url: '/images/type-of-work/type-3.jpg',
+          alt: 'текст описания'
+        },
+        text: 'Устанавливаем фундамент, вкручиваем сваи согласно дизайн проекту'
+      },
+      {
+        id: 4,
+        image: {
+          url: '/images/type-of-work/type-3.jpg',
+          alt: 'текст описания'
+        },
+        text: 'Устанавливаем фундамент, вкручиваем сваи согласно дизайн проекту'
+      },
+      {
+        id: 5,
+        image: {
+          url: '/images/type-of-work/type-3.jpg',
+          alt: 'текст описания'
+        },
+        text: 'Устанавливаем фундамент, вкручиваем сваи согласно дизайн проекту'
+      },
+      {
+        id: 6,
+        image: {
+          url: '/images/type-of-work/type-3.jpg',
+          alt: 'текст описания'
+        },
+        text: 'Устанавливаем фундамент, вкручиваем сваи согласно дизайн проекту'
+      },
+      {
+        id: 7,
+        image: {
+          url: '/images/type-of-work/type-3.jpg',
+          alt: 'текст описания'
+        },
+        text: 'Устанавливаем фундамент, вкручиваем сваи согласно дизайн проекту'
+      },
+      {
+        id: 8,
+        image: {
+          url: '/images/type-of-work/type-3.jpg',
+          alt: 'текст описания'
+        },
+        text: 'Устанавливаем фундамент, вкручиваем сваи согласно дизайн проекту'
+      },
+      {
+        id: 9,
+        image: {
+          url: '/images/type-of-work/type-3.jpg',
+          alt: 'текст описания'
+        },
+        text: 'Устанавливаем фундамент, вкручиваем сваи согласно дизайн проекту'
+      }
+    ]
+  },
+  partners: {
+    title: 'Более 50 компаний<br> уже доверились нам',
+    list: [
+      {
+        id: 1,
+        image: {
+          url: '/images/partners/partner-1.png',
+          alt: 'текст описания'
+        }
+      },
+      {
+        id: 2,
+        image: {
+          url: '/images/partners/partner-2.png',
+          alt: 'текст описания'
+        }
+      },
+      {
+        id: 3,
+        image: {
+          url: '/images/partners/partner-3.png',
+          alt: 'текст описания'
+        }
+      },
+      {
+        id: 4,
+        image: {
+          url: '/images/partners/partner-4.png',
+          alt: 'текст описания'
+        }
+      },
+      {
+        id: 5,
+        image: {
+          url: '/images/partners/partner-5.png',
+          alt: 'текст описания'
+        }
+      },
+      {
+        id: 6,
+        image: {
+          url: '/images/partners/partner-2.png',
+          alt: 'текст описания'
+        }
+      }
+    ]
+  },
+  director: {
+    image: {
+      url: '/images/аvatar.jpg',
+      alt: 'текст описания'
+    },
+    name: 'Соболев Александр',
+    post: 'Основатель и руководитель компании «Архитектор»',
+    title: 'Мы искренне любим своё дело и помогаем нашим клиентам воплощать идеи в реальность',
+    text: '<p>На рынке строительных услуг мы уже 12 лет. За это время нам удалось сформировать сплоченный коллектив специалистов с более чем двадцатилетним стажем.</p><p>Вместе с тем я слежу за тем, чтобы наши специалисты оставались в курсе последних технологий, совершенствовали свои навыки. За счет этого мы можем гарантировать долговечность выполненных нами проектов.</p><p>Вместе с тем я слежу за тем, чтобы наши специалисты оставались в курсе последних технологий, совершенствовали свои навыки. За счет этого мы можем гарантировать долговечность выполненных нами проектов.</p>'
+  },
+  services: {
+    title: 'Профессиональные услуги для тех, кто ценит качество и комфорт',
+    list: [
+      {
+        id: 1,
+        image: {
+          url: '/images/services/service-1.png',
+          alt: 'текст описания'
+        },
+        description: 'Внутренние и внешние отделочные работы'
+      },
+      {
+        id: 2,
+        image: {
+          url: '/images/services/service-2.png',
+          alt: 'текст описания'
+        },
+        description: 'Проведение сантехники: вода, канализация'
+      },
+      {
+        id: 3,
+        image: {
+          url: '/images/services/service-3.png',
+          alt: 'текст описания'
+        },
+        description: 'Электрика от счетчика до розеток'
+      },
+      {
+        id: 4,
+        image: {
+          url: '/images/services/service-4.png',
+          alt: 'текст описания'
+        },
+        description: 'Охранная сигнализация, видеонаблюдение'
+      },
+      {
+        id: 5,
+        image: {
+          url: '/images/services/service-5.png',
+          alt: 'текст описания'
+        },
+        description: 'Озеленение территории, посадка растений'
+      },
+      {
+        id: 6,
+        image: {
+          url: '/images/services/service-6.png',
+          alt: 'текст описания'
+        },
+        description: 'Вентиляция и кондиционирование'
+      },
+      {
+        id: 7,
+        image: {
+          url: '/images/services/service-1.png',
+          alt: 'текст описания'
+        },
+        description: 'Внутренние и внешние отделочные работы'
+      },
+      {
+        id: 8,
+        image: {
+          url: '/images/services/service-2.png',
+          alt: 'текст описания'
+        },
+        description: 'Проведение сантехники: вода, канализация'
+      }
+    ]
+  },
+  locations: {
+    title: 'приходите к нам в офис —<br>мы рядом',
+    address: 'г. Пенза, ул. Металлистов, 8',
+    officeHours: 'Ежедневно, 9:00–18:00',
+    map: {
+      center: [53.195042, 45.018316],
+      place: {
+        id: 1,
+        latLng: [53.164637, 45.013806]
+      }
+    }
+  }
+}
+
+if (data.value) {
+  if (data.value.seo && data.value.seo.meta) {
+    useSeoMeta(data.value.seo.meta)
+  }
+  if (data.value.schemaOrg) {
+    useSchemaOrg(data.value.schemaOrg)
+  }
+}
+
+const onSubmitSuccess = () => {
+  openSuccessModal()
+}
+
+const onSubmitFailure = () => {
+  openFailureModal()
+}
+
+const marqueeSettings = {
+  duration: 40,
+  pauseOnHover: false,
+  direction: 'right',
+  loop: 0
+}
 
 const swiperRef = ref<HTMLElement | null>(null)
 let swiperInstance: Swiper | null = null
@@ -63,6 +666,38 @@ function handleResize(): void {
   }
 }
 
+interface Place {
+  id: ID
+  latLng: number[]
+}
+
+let mapInstance: any
+
+const yandexMarkerOptions = (place: Place) => {
+  return {
+    iconLayout: 'default#imageWithContent',
+    iconImageHref: '/images/icon-map.svg',
+    iconImageSize: [80, 80],
+    iconImageOffset: [-40, -80]
+  }
+}
+
+const handleMarkerClick = (place: Place) => {
+  mapInstance.panTo(place.latLng, {
+    duration: 500,
+    delay: 0
+  })
+  mapInstance.setCenter(place.latLng, 17)
+}
+
+const handleCreated = (map: any) => {
+  mapInstance = map
+}
+
+const hideOverlayMap = () => {
+  isOverlayMap.value = false
+}
+
 onMounted(() => {
   waitForDOMReady(() => {
     isDomReady.value = true
@@ -93,7 +728,218 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <h1>sdfsdf</h1>
+  <main>
+    <transition name="fade-preloader">
+      <AppPreloader v-if="!isDomReady" />
+    </transition>
+
+    <section class="home-screen gsap-home">
+      <div class="home-screen__inner gsap-perspective gsap-scale-block">
+        <div class="container">
+          <div class="home-screen__content">
+            <div class="gsap-home-title">
+              <h1 class="home-screen__title typo-h1" v-html="data.homeScreen.title" />
+            </div>
+            <div class="gsap-home-description">
+              <p class="home-screen__description typo-p2" v-html="data.homeScreen.description" />
+            </div>
+            <div class="gsap-home-btn">
+              <button class="home-screen__btn btn btn--primary" @click="handleCallback">Рассчитать проект</button>
+            </div>
+          </div>
+        </div>
+        <div class="container home-screen__advantages">
+          <div class="home-screen__advantages-inner">
+            <CardGlass
+              v-for="(item, index) in data.homeScreen.advantages"
+              :key="item.id"
+              :card="item"
+              :class="`gsap-perspective-item gsap-home-card-glass-${index}`"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="home-screen__bg gsap-scale-block">
+        <div class="gsap-parallax-bg" :style="{ backgroundImage: `url(${data.homeScreen.image.url})` }" />
+      </div>
+    </section>
+
+    <section class="advantages">
+      <div class="container">
+        <div class="gsap-container-split-text">
+          <h2 class="advantages__title typo-h2 gsap-split-text" v-html="data.advantages.title" />
+        </div>
+        <div class="advantages__list gsap-fade-container">
+          <CardAdvantages v-for="item in data.advantages.items" :key="item.id" :card="item" class="gsap-fade-item" />
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz">
+      <div class="container gsap-fade-container">
+        <div class="gsap-fade-item" v-html="data.marquiz" />
+      </div>
+    </section>
+
+    <section class="work">
+      <div class="container gsap-fade-container">
+        <div class="work__frame gsap-fade-item">
+          <div class="work__bg">
+            <img class="work__bg-img" src="/images/work-bg-1.png" alt="" />
+            <img class="work__bg-img" src="/images/work-bg-2.png" alt="" />
+          </div>
+          <div class="work__content">
+            <h2 class="work__title typo-h3" v-html="data.work.title" />
+            <ul class="work__list">
+              <li v-for="item in data.work.list" :key="item.id" class="work__list-item typo-p3">{{ item.text }}</li>
+            </ul>
+            <button class="work__btn btn btn--primary" @click="handleCallback">Начать сотрудничество</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects">
+      <div class="container">
+        <div class="gsap-container-split-text">
+          <h2 class="projects__title typo-h2 gsap-split-text" v-html="data.projects.title" />
+        </div>
+        <div class="projects__list gsap-fade-container">
+          <CardProject v-for="item in data.projects.items" :key="item.id" :card="item" class="gsap-fade-item" />
+        </div>
+      </div>
+    </section>
+
+    <section class="offer gsap-perspective">
+      <div class="container">
+        <div class="offer__wrap gsap-fade-container">
+          <div class="offer__info gsap-fade-item">
+            <div class="offer__info-bg gsap-parallax-bg" :style="{ backgroundImage: `url(${data.offer.image.url})` }" />
+            <CardGlass :card="data.offer.advantage" class="gsap-perspective-item" />
+          </div>
+          <div class="offer__form gsap-fade-item">
+            <h2 class="offer__form-title typo-h3">Получите бесплатный проект дома</h2>
+            <p class="offer__form-description typo-p3">
+              Оставьте заявку, и наш менеджер свяжется с вами в течение часа
+            </p>
+            <CallbackForm @submit-success="onSubmitSuccess" @submit-failure="onSubmitFailure" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="types-work">
+      <div class="container">
+        <div class="types-work__wrap gsap-fade-container">
+          <div class="types-work__heading">
+            <div class="types-work__title gsap-container-split-text">
+              <h2 class="typo-h2 gsap-split-text" v-html="data.typesWork.title" />
+            </div>
+          </div>
+          <div class="types-work__list gsap-fade-item">
+            <TypeWork v-for="item in data.typesWork.list" :key="item.id" :type="item" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="gsap-stacking-card-end" />
+
+    <section class="partners">
+      <div class="gsap-container-split-text">
+        <h2 class="partners__title typo-h2 gsap-split-text" v-html="data.partners.title" />
+      </div>
+      <div class="gsap-fade-container">
+        <div class="gsap-fade-item">
+          <Vue3Marquee
+            :duration="marqueeSettings.duration"
+            :pause-on-hover="marqueeSettings.pauseOnHover"
+            :direction="marqueeSettings.direction"
+            :loop="marqueeSettings.loop"
+            :clone="true"
+          >
+            <div v-for="item in data.partners.list" :key="item.id" class="partners__item">
+              <img class="partners__img" :src="item.image.url" :alt="item.image.alt" />
+            </div>
+          </Vue3Marquee>
+        </div>
+      </div>
+    </section>
+
+    <section class="director">
+      <div class="container gsap-fade-container">
+        <div class="director__frame gsap-fade-item">
+          <div class="director__content">
+            <h3 class="director__title typo-h3" v-html="data.director.title" />
+            <div class="director__text" v-html="data.director.text" />
+          </div>
+          <div class="director__profile">
+            <img :src="data.director.image.url" :alt="data.director.image.alt" class="director__profile-photo" />
+            <p class="director__profile-name typo-p1">{{ data.director.name }}</p>
+            <p class="director__profile-post typo-p3">{{ data.director.post }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+        <div class="gsap-container-split-text">
+          <h2 class="services__title typo-h2 gsap-split-text" v-html="data.services.title" />
+        </div>
+        <div ref="swiperRef" class="services__list swiper">
+          <div class="swiper-wrapper gsap-fade-container">
+            <div v-for="item in data.services.list" :key="item.id" class="swiper-slide gsap-fade-item">
+              <CardService :card="item" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="locations">
+      <div class="container">
+        <div class="gsap-container-split-text">
+          <h2 class="locations__title typo-h2 gsap-split-text" v-html="data.locations.title" />
+        </div>
+      </div>
+      <div class="gsap-fade-container">
+        <div class="locations__map gsap-fade-item">
+          <div class="container">
+            <div class="locations__card">
+              <p class="locations__card-label typo-p3">Офис</p>
+              <p class="locations__card-address typo-p1">{{ data.locations.address }}</p>
+              <p class="locations__card-office-hours typo-p2">{{ data.locations.officeHours }}</p>
+            </div>
+          </div>
+          <div v-if="isOverlayMap" class="locations__map-overlay" @click="hideOverlayMap">
+            <div class="locations__map-overlay-text">
+              <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M213.304 128h42.654V42.667h-42.654zM42.688 256h85.308v-42.666H42.688zm101.466-81.674L83.84 113.974l30.156-30.166l60.313 60.352zm-30.159 211.187l-30.156-30.165l60.312-60.352l30.157 30.165zM325.12 174.326l-30.157-30.166l60.313-60.352l30.157 30.166zm3.156 178.041l59.588 59.606l24.142-24.15l-59.609-59.605l42.932-42.923l-150.612-40.682l40.67 150.656zm-62.659 116.97l-75.39-279.21l279.128 75.392l-62.66 62.699l59.61 59.605l-78.441 78.443l-59.588-59.605z"
+                />
+              </svg>
+              <p class="typo-p1-semibold">Кликните для взаимодествия</p>
+            </div>
+          </div>
+          <ClientOnly>
+            <YandexMap :controls="[]" :coordinates="data.locations.map.center" :zoom="13" @created="handleCreated">
+              <YandexClusterer>
+                <YandexMarker
+                  :marker-id="data.locations.map.place.id"
+                  :coordinates="data.locations.map.place.latLng"
+                  :options="yandexMarkerOptions(data.locations.map.place)"
+                  @click="handleMarkerClick(data.locations.map.place)"
+                />
+              </YandexClusterer>
+            </YandexMap>
+          </ClientOnly>
+        </div>
+      </div>
+    </section>
+  </main>
 </template>
 
 <style lang="scss" scoped>
