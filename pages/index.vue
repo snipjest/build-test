@@ -3,10 +3,8 @@ import { view } from '@/constants'
 import Swiper from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import type { ID } from '@/types/ID'
 
 const { openSuccessModal, openFailureModal } = useFeedback()
-const isOverlayMap = ref<boolean>(true)
 
 // const { data, error } = await useFetch<any>('/api/home/')
 
@@ -636,38 +634,6 @@ function handleResize(): void {
   }
 }
 
-interface Place {
-  id: ID
-  latLng: number[]
-}
-
-let mapInstance: any
-
-const yandexMarkerOptions = (place: Place) => {
-  return {
-    iconLayout: 'default#imageWithContent',
-    iconImageHref: '/images/icon-map.svg',
-    iconImageSize: [80, 80],
-    iconImageOffset: [-40, -80]
-  }
-}
-
-const handleMarkerClick = (place: Place) => {
-  mapInstance.panTo(place.latLng, {
-    duration: 500,
-    delay: 0
-  })
-  mapInstance.setCenter(place.latLng, 17)
-}
-
-const handleCreated = (map: any) => {
-  mapInstance = map
-}
-
-const hideOverlayMap = () => {
-  isOverlayMap.value = false
-}
-
 onMounted(() => {
   window.addEventListener('resize', () => {
     handleResize()
@@ -746,49 +712,6 @@ onUnmounted(() => {
               <CardService :card="item" />
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="locations">
-      <div class="container">
-        <div class="gsap-container-split-text">
-          <h2 class="locations__title typo-h2 gsap-split-text" v-html="data.locations.title" />
-        </div>
-      </div>
-      <div class="gsap-fade-container">
-        <div class="locations__map gsap-fade-item">
-          <div class="container">
-            <div class="locations__card">
-              <p class="locations__card-label typo-p3">Офис</p>
-              <p class="locations__card-address typo-p1">{{ data.locations.address }}</p>
-              <p class="locations__card-office-hours typo-p2">{{ data.locations.officeHours }}</p>
-            </div>
-          </div>
-          <div v-if="isOverlayMap" class="locations__map-overlay" @click="hideOverlayMap">
-            <div class="locations__map-overlay-text">
-              <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M213.304 128h42.654V42.667h-42.654zM42.688 256h85.308v-42.666H42.688zm101.466-81.674L83.84 113.974l30.156-30.166l60.313 60.352zm-30.159 211.187l-30.156-30.165l60.312-60.352l30.157 30.165zM325.12 174.326l-30.157-30.166l60.313-60.352l30.157 30.166zm3.156 178.041l59.588 59.606l24.142-24.15l-59.609-59.605l42.932-42.923l-150.612-40.682l40.67 150.656zm-62.659 116.97l-75.39-279.21l279.128 75.392l-62.66 62.699l59.61 59.605l-78.441 78.443l-59.588-59.605z"
-                />
-              </svg>
-              <p class="typo-p1-semibold">Кликните для взаимодествия</p>
-            </div>
-          </div>
-          <ClientOnly>
-            <YandexMap :controls="[]" :coordinates="data.locations.map.center" :zoom="13" @created="handleCreated">
-              <YandexClusterer>
-                <YandexMarker
-                  :marker-id="data.locations.map.place.id"
-                  :coordinates="data.locations.map.place.latLng"
-                  :options="yandexMarkerOptions(data.locations.map.place)"
-                  @click="handleMarkerClick(data.locations.map.place)"
-                />
-              </YandexClusterer>
-            </YandexMap>
-          </ClientOnly>
         </div>
       </div>
     </section>
