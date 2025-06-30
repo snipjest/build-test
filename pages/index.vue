@@ -5,7 +5,6 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import type { ID } from '@/types/ID'
 
-const { handleCallback } = useHandleCallback()
 const { openSuccessModal, openFailureModal } = useFeedback()
 const isOverlayMap = ref<boolean>(true)
 
