@@ -4,8 +4,6 @@ import Swiper from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-const { openSuccessModal, openFailureModal } = useFeedback()
-
 // const { data, error } = await useFetch<any>('/api/home/')
 
 // if (error.value) {
@@ -589,14 +587,6 @@ const data = {
       }
     }
   }
-}
-
-const onSubmitSuccess = () => {
-  openSuccessModal()
-}
-
-const onSubmitFailure = () => {
-  openFailureModal()
 }
 
 const swiperRef = ref<HTMLElement | null>(null)
