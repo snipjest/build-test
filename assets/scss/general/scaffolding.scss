@@ -1,0 +1,105 @@
+@use './variables' as *;
+
+html,
+body,
+/* stylelint-disable */
+#__nuxt {
+  height: 100%;
+}
+/* stylelint-enable */
+
+body {
+  font-family:
+    Manrope,
+    -apple-system,
+    BlinkMacSystemFont,
+    Arial,
+    sans-serif;
+  font-weight: 500;
+  background-color: $color-neutral-800;
+  color: #ffffff;
+}
+
+main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 72px;
+
+  @media (min-width: $tablet) {
+    margin-top: 80px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  white-space: nowrap;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1560px;
+  padding: 0 16px;
+
+  @media (min-width: $tablet) {
+    padding: 0 48px;
+  }
+}
+
+.custom-scrollbar {
+  scrollbar-color: #cccccc transparent;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 100px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    border: 5px solid transparent;
+    background-clip: content-box;
+    background-color: #cccccc;
+  }
+}
+
+.f-caption {
+  display: none;
+}
+
+.fancybox__backdrop {
+  background: rgb(0 0 0 / 60%) !important;
+  backdrop-filter: blur(8px);
+}
+
+.fade-scale-enter-active,
+.fade-scale-leave-active {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.fade-scale-enter-from,
+.fade-scale-leave-to {
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+.fade-scale-leave-from,
+.fade-scale-enter-to {
+  opacity: 1;
+  transform: scale(1);
+}

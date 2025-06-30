@@ -1,0 +1,36 @@
+@use 'sass:math';
+
+// использование: @include line-clamp(3);
+@mixin line-clamp($lines: 1) {
+  @if $lines <= 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    text-overflow: ellipsis;
+  }
+}
+
+// Миксин расчета среднего значения между min и max при изменении ширины экрана
+@function val($min, $max) {
+  // min/max ширина .container
+  $min-viewport-width: 480;
+  $max-viewport-width: 1560;
+  $slope: math.div(($max - $min), ($max-viewport-width - $min-viewport-width));
+  $y-axis-intersection: -$min-viewport-width * $slope + $min;
+
+  @return clamp(#{$min}px, #{$y-axis-intersection}px + #{$slope * 100vw}, #{$max}px);
+}
+
+// Миксин преобразования px в rem
+@function torem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'Не используйте единицы измерения при работе с функцией rem()! Передавайте аргументом только числа.';
+  }
+}

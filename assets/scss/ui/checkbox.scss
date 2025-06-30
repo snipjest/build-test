@@ -1,0 +1,79 @@
+@use './../general/variables.scss' as *;
+
+.checkbox {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 12px;
+
+  &__custom {
+    flex-shrink: 0;
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: $color-neutral-600;
+    border: 2px solid $color-neutral-500;
+    border-radius: 4px;
+  }
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    &:checked + .checkbox__custom {
+      background-color: #ffffff;
+      border: 2px solid #ffffff;
+    }
+
+    &:checked + .checkbox__custom::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDEwIDciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAgMS4wMzAyOUw4Ljk0MzU5IDBMMy44Nzk3MiA0LjkzODY5TDEuMDU2NDEgMi4xODU5MUwwIDMuMjE2MkwzLjg3OTcyIDdMMTAgMS4wMzAyOVoiIGZpbGw9IiMyRDJFMkYiLz4KPC9zdmc+Cg==');
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &.error + .checkbox__custom {
+      border: 2px solid $color-red;
+    }
+  }
+
+  &__text {
+    color: $color-neutral-300;
+
+    a {
+      white-space: nowrap;
+      color: #ffffff;
+
+      @media (min-width: $tablet) {
+        position: relative;
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      .checkbox__input:not(:checked) + .checkbox__custom::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDEwIDciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAgMS4wMzAyOUw4Ljk0MzU5IDBMMy44Nzk3MiA0LjkzODY5TDEuMDU2NDEgMi4xODU5MUwwIDMuMjE2MkwzLjg3OTcyIDdMMTAgMS4wMzAyOVoiIGZpbGw9IiNDM0MzQzMiLz4KPC9zdmc+Cg==');
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

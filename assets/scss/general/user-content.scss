@@ -1,0 +1,43 @@
+@use './variables' as *;
+
+.user-content {
+  h2 {
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: val(18, 20);
+    line-height: 140%;
+  }
+
+  p {
+    margin-top: 16px;
+    font-weight: 500;
+    font-size: val(16, 18);
+    line-height: 140%;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul,
+  ol {
+    padding-left: 18px;
+    list-style-position: outside;
+  }
+
+  ul {
+    li {
+      list-style: disc;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

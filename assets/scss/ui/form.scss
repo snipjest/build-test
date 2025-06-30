@@ -1,0 +1,127 @@
+@use './../general/variables.scss' as *;
+
+.form {
+  &__flex {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  &__bottom {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.input {
+  position: relative;
+
+  &__inner {
+    border-radius: 8px;
+    background: $color-neutral-600;
+  }
+
+  &__label {
+    position: absolute;
+    top: 17px;
+    left: 18px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 135%;
+    color: $color-neutral-300;
+    transition: all 0.2s ease 0s;
+    z-index: 0;
+    padding-right: 14px;
+
+    .input.disabled & {
+      color: $color-neutral-400;
+    }
+  }
+}
+
+input {
+  height: 60px;
+  padding: 18px 16px 0;
+}
+
+textarea {
+  height: 160px;
+  padding: 28px 16px 18px;
+}
+
+input,
+textarea {
+  display: block;
+  color: #ffffff;
+  position: relative;
+  width: 100%;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 135%;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 2px solid $color-neutral-500;
+  z-index: 2;
+  transition: all 0.2s ease 0s;
+
+  &::placeholder {
+    opacity: 0;
+  }
+
+  &:focus {
+    border: 2px solid #ffffff;
+  }
+
+  &:disabled {
+    color: $color-neutral-500;
+  }
+
+  &.error {
+    border: 2px solid $color-red;
+  }
+
+  &:focus ~ .input__label,
+  &:not(:placeholder-shown) ~ .input__label {
+    font-size: 14px;
+    top: 9px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  }
+}
+
+button[type='submit'] {
+  position: relative;
+}
+
+.loader {
+  &::before {
+    content: '';
+    position: absolute;
+    border: 4px solid #ffffff;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 0.6s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
