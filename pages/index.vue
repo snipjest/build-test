@@ -650,24 +650,6 @@ onUnmounted(() => {
 
 <template>
   <main>
-    <section class="offer gsap-perspective">
-      <div class="container">
-        <div class="offer__wrap gsap-fade-container">
-          <div class="offer__info gsap-fade-item">
-            <div class="offer__info-bg gsap-parallax-bg" :style="{ backgroundImage: `url(${data.offer.image.url})` }" />
-            <CardGlass :card="data.offer.advantage" class="gsap-perspective-item" />
-          </div>
-          <div class="offer__form gsap-fade-item">
-            <h2 class="offer__form-title typo-h3">Получите бесплатный проект дома</h2>
-            <p class="offer__form-description typo-p3">
-              Оставьте заявку, и наш менеджер свяжется с вами в течение часа
-            </p>
-            <CallbackForm @submit-success="onSubmitSuccess" @submit-failure="onSubmitFailure" />
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="types-work">
       <div class="container">
         <div class="types-work__wrap gsap-fade-container">
@@ -696,21 +678,6 @@ onUnmounted(() => {
             <img :src="data.director.image.url" :alt="data.director.image.alt" class="director__profile-photo" />
             <p class="director__profile-name typo-p1">{{ data.director.name }}</p>
             <p class="director__profile-post typo-p3">{{ data.director.post }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="services">
-      <div class="container">
-        <div class="gsap-container-split-text">
-          <h2 class="services__title typo-h2 gsap-split-text" v-html="data.services.title" />
-        </div>
-        <div ref="swiperRef" class="services__list swiper">
-          <div class="swiper-wrapper gsap-fade-container">
-            <div v-for="item in data.services.list" :key="item.id" class="swiper-slide gsap-fade-item">
-              <CardService :card="item" />
-            </div>
           </div>
         </div>
       </div>
