@@ -1,0 +1,53 @@
+{
+  "logo": {
+    "black": {
+      "url": "/images/logo-black.svg",
+      "alt": "текст описания"
+    },
+    "white": {
+      "url": "/images/logo-white.svg",
+      "alt": "текст описания"
+    }
+  },
+  "header": {
+    "socials": [
+      {
+        "id": 1,
+        "image": {
+          "url": "/images/telegram.svg",
+          "alt": "текст описания"
+        },
+        "to": "https://telegram.org/"
+      },
+      {
+        "id": 2,
+        "image": {
+          "url": "/images/whatsapp.svg",
+          "alt": "текст описания"
+        },
+        "to": "https://www.whatsapp.com"
+      }
+    ],
+    "phone": {
+      "label": "+7 (912) 301 71 31",
+      "to": "+79123017131"
+    }
+  },
+  "footer": {
+    "phones": [
+      {
+        "id": 1,
+        "label": "+7 (912) 301 71 31",
+        "to": "+79123017131"
+      },
+      {
+        "id": 2,
+        "label": "+7 (912) 301 71 31",
+        "to": "+79123017131"
+      }
+    ],
+    "email": "arch-penza@mail.ru",
+    "address": "г. Пенза, ул. Металлистов, 8",
+    "copyright": "© ООО «Архитектор», ИНН 9999999999"
+  }
+}

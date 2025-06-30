@@ -1,4 +1,4 @@
-import data from '@/mock-data/politika/index.json'
+import data from '/mock-data/politika/index.json'
 
 export default defineEventHandler(async () => {
 

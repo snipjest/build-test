@@ -1,4 +1,4 @@
-import data from '@/mock-data/layout/index.json'
+import data from '/mock-data/layout/index.json'
 
 export default defineEventHandler(async () => {
 
