@@ -2,7 +2,6 @@ import checker from 'vite-plugin-checker'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
-  target: 'static',
   devtools: { enabled: false },
   devServer: {
     port: 3000,
