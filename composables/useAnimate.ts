@@ -1,10 +1,9 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
 import { view } from '@/constants'
 
-gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin)
+// gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const waitForDOMReady = (callback: () => void, interval = 1300) => {
   const checkDOMReady = () => {

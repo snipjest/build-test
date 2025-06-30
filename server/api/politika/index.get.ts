@@ -1,7 +1,15 @@
-import data from '/mock-data/politika/index.json'
+import data from '@/mock-data/politika/index.json'
 
 export default defineEventHandler(async () => {
+  const config = useRuntimeConfig()
+  const baseUrl = config.public.baseUrl
 
   // Если baseUrl не задан — возвращаем mock-данные
-  return data
+  if (!baseUrl) {
+    return data
+  }
+
+  // Иначе — запрос к удалённому серверу
+  const response: any = await $fetch(`${baseUrl}/api/politika/`)
+  return response
 })

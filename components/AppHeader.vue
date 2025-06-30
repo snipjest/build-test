@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import useLock from '@/composables/useLock'
+import { useStoreLayout } from '@/stores/useStoreLayout'
 import { view } from '@/constants'
 
 const { handleCallback } = useHandleCallback()
@@ -8,43 +9,7 @@ const props = defineProps<{
   customClass?: string
 }>()
 
-const { logo, header } = {
-  "logo": {
-    "black": {
-      "url": "/images/logo-black.svg",
-      "alt": "текст описания"
-    },
-    "white": {
-      "url": "/images/logo-white.svg",
-      "alt": "текст описания"
-    }
-  },
-  "header": {
-    "socials": [
-      {
-        "id": 1,
-        "image": {
-          "url": "/images/telegram.svg",
-          "alt": "текст описания"
-        },
-        "to": "https://telegram.org/"
-      },
-      {
-        "id": 2,
-        "image": {
-          "url": "/images/whatsapp.svg",
-          "alt": "текст описания"
-        },
-        "to": "https://www.whatsapp.com"
-      }
-    ],
-    "phone": {
-      "label": "+7 (912) 301 71 31",
-      "to": "+79123017131"
-    }
-  }
-}
-
+const { logo, header } = useStoreLayout()
 
 const { scrollLock, scrollUnLock } = useLock()
 const isOpenMenu = ref<boolean>(false)

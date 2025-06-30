@@ -1,24 +1,5 @@
 <script lang="ts" setup>
-const { footer } = {
-  "footer": {
-    "phones": [
-      {
-        "id": 1,
-        "label": "+7 (912) 301 71 31",
-        "to": "+79123017131"
-      },
-      {
-        "id": 2,
-        "label": "+7 (912) 301 71 31",
-        "to": "+79123017131"
-      }
-    ],
-    "email": "arch-penza@mail.ru",
-    "address": "г. Пенза, ул. Металлистов, 8",
-    "copyright": "© ООО «Архитектор», ИНН 9999999999"
-  }
-}
-
+const { footer } = useStoreLayout()
 const { handleCallback } = useHandleCallback()
 
 const highlightedEmail = computed(() => {

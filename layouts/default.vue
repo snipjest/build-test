@@ -1,6 +1,8 @@
 <template>
   <div class="layout-default">
+    <AppHeader :custom-class="'header--transparent'" />
     <slot />
+    <AppFooter />
   </div>
 </template>
 
