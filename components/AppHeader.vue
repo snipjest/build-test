@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import useLock from '@/composables/useLock'
-import { useStoreLayout } from '@/stores/useStoreLayout'
 import { view } from '@/constants'
 
 const { handleCallback } = useHandleCallback()
