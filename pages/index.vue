@@ -607,15 +607,6 @@ const data = {
   }
 }
 
-if (data.value) {
-  if (data.value.seo && data.value.seo.meta) {
-    useSeoMeta(data.value.seo.meta)
-  }
-  if (data.value.schemaOrg) {
-    useSchemaOrg(data.value.schemaOrg)
-  }
-}
-
 const onSubmitSuccess = () => {
   openSuccessModal()
 }
@@ -732,37 +723,6 @@ onUnmounted(() => {
     <transition name="fade-preloader">
       <AppPreloader v-if="!isDomReady" />
     </transition>
-
-    <section class="home-screen gsap-home">
-      <div class="home-screen__inner gsap-perspective gsap-scale-block">
-        <div class="container">
-          <div class="home-screen__content">
-            <div class="gsap-home-title">
-              <h1 class="home-screen__title typo-h1" v-html="data.homeScreen.title" />
-            </div>
-            <div class="gsap-home-description">
-              <p class="home-screen__description typo-p2" v-html="data.homeScreen.description" />
-            </div>
-            <div class="gsap-home-btn">
-              <button class="home-screen__btn btn btn--primary" @click="handleCallback">Рассчитать проект</button>
-            </div>
-          </div>
-        </div>
-        <div class="container home-screen__advantages">
-          <div class="home-screen__advantages-inner">
-            <CardGlass
-              v-for="(item, index) in data.homeScreen.advantages"
-              :key="item.id"
-              :card="item"
-              :class="`gsap-perspective-item gsap-home-card-glass-${index}`"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="home-screen__bg gsap-scale-block">
-        <div class="gsap-parallax-bg" :style="{ backgroundImage: `url(${data.homeScreen.image.url})` }" />
-      </div>
-    </section>
 
     <section class="advantages">
       <div class="container">
