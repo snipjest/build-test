@@ -56,7 +56,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@vueuse/nuxt',
     'nuxt-schema-org',
-    'yandex-metrika-module-nuxt3'
+
   ],
   css: ['@/assets/scss/main.scss', '@/assets/css/main.css', 'vue-final-modal/style.css'],
   vite: {
@@ -86,11 +86,5 @@ export default defineNuxtConfig({
     }
   },
 
-  yandexMetrika: {
-    id: '',
-    clickmap: true,
-    trackLinks: true,
-    webvisor: true,
-    accurateTrackBounce: true
-  }
+
 })
