@@ -302,19 +302,11 @@ const animate3DPerspective = (): void => {
   }
 }
 
-const animateStackingCards = (): void => {
+const animateStackingCards = () => {
   const cards = gsap.utils.toArray('.gsap-stacking-card')
 
-  if (cards.length === 0) return
-
-  // Адаптивная система: чем больше карточек, тем меньше интервал между ними
-  const maxStackHeight = window.innerHeight * 0.4 // максимальная высота стека 40%
-  const minCardSpacing = 15 // минимальный интервал между карточками
-  const maxCardSpacing = 50 // максимальный интервал между карточками
-
-  // Рассчитываем оптимальный интервал в зависимости от количества карточек
-  const idealSpacing = maxStackHeight / cards.length
-  const cardSpacing = Math.max(minCardSpacing, Math.min(maxCardSpacing, idealSpacing))
+  // 20% от высоты экрана
+  const stackHeight = window.innerHeight * 0.2
 
   let position
   if (document.body.clientWidth >= view.tabletLg) {
@@ -323,28 +315,28 @@ const animateStackingCards = (): void => {
     position = 'top 20%'
   }
 
-  cards.forEach((card: any, i: number): void => {
+  cards.forEach((card: any, i) => {
     gsap.fromTo(
       card.querySelector('.gsap-stacking-card-inner'),
       //начальное состояние
       {
-        // scale: 1,
+        scale: 1,
         transformOrigin: 'center top',
         filter: 'blur(0px)'
       },
       // конечное состояние при скролле
       {
-        y: -(i * cardSpacing), // простой и понятный сдвиг: каждая карточка на свой интервал
-        // scale: gsap.utils.mapRange(0, cards.length - 1, 1, 0.7, i), // плавное уменьшение от 1 до 0.7
-        filter: 'blur(' + gsap.utils.mapRange(0, cards.length - 1, 0, 15, i) + 'px)', // размытие от 0 до 15px
+        y: gsap.utils.mapRange(1, cards.length, -20, -stackHeight + 20, cards.length - i), // сдвиг вверх
+        scale: gsap.utils.mapRange(1, cards.length, 0.4, 0.9, i), // уменьшение
+        filter: 'blur(' + gsap.utils.mapRange(1, cards.length, 4, 25, cards.length - i) + 'px)', // размытие
         scrollTrigger: {
           trigger: card,
+          // markers: true,
           scrub: true,
-          start: 'top ' + window.innerHeight * 0.3, // 30% от высоты экрана
-          end: '+=' + window.innerHeight * 2, // сокращаем дистанцию анимации
+          start: 'top ' + stackHeight,
+          end: '+=' + window.innerHeight * 3,
           invalidateOnRefresh: true,
           id: `card-${i}`
-          // markers: true
         }
       }
     )
