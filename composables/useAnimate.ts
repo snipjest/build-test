@@ -343,8 +343,8 @@ const animateStackingCards = (): void => {
           start: 'top ' + window.innerHeight * 0.3, // 30% от высоты экрана
           end: '+=' + window.innerHeight * 2, // сокращаем дистанцию анимации
           invalidateOnRefresh: true,
-          id: `card-${i}`,
-          markers: true // отключаем маркеры
+          id: `card-${i}`
+          // markers: true
         }
       }
     )
