@@ -42,7 +42,7 @@ const schema = Yup.object().shape({
   tel: Yup.string().required().length(16, 'Укажите корректный телефон'),
   comment: Yup.string().max(3000, 'Максимум 3000 символов'),
   files: Yup.array()
-    .test('isAcceptedFile', 'Недопустимый формат файла', function (value, context) {
+    .test('isAcceptedFile', 'Недопустимый формат файла', function (value: any[] | undefined, context): boolean {
       if (!value || value.length === 0) {
         return true
       }
@@ -54,22 +54,30 @@ const schema = Yup.object().shape({
 
       return invalidFiles.length === 0
     })
-    .test('fileSize', `Файл превышает максимальный размер ${MAX_FILE_SIZE} Мб`, function (value) {
-      if (!value || value.length === 0) {
-        return true
-      }
+    .test(
+      'fileSize',
+      `Файл превышает максимальный размер ${MAX_FILE_SIZE} Мб`,
+      function (value: any[] | undefined): boolean {
+        if (!value || value.length === 0) {
+          return true
+        }
 
-      const oversizedFiles = value.filter(file => file.size / 1024 / 1024 > MAX_FILE_SIZE)
-      return oversizedFiles.length === 0
-    })
-    .test('no-upload-errors', 'Не удалось загрузить некоторые файлы. Удалите их и повторите попытку.', value => {
-      if (!Array.isArray(value) || value.length === 0) return true
-      return !value.some((f: any) => f.status === 'error')
-    }),
-  agree: Yup.boolean().oneOf([true], 'Вы должны согласиться с условиями')
+        const oversizedFiles = value.filter(file => file.size / 1024 / 1024 > MAX_FILE_SIZE)
+        return oversizedFiles.length === 0
+      }
+    )
+    .test(
+      'no-upload-errors',
+      'Не удалось загрузить некоторые файлы. Удалите их и повторите попытку.',
+      (value: any[] | undefined): boolean => {
+        if (!Array.isArray(value) || value.length === 0) return true
+        return !value.some((f: any): boolean => f.status === 'error')
+      }
+    ),
+  agree: Yup.boolean().oneOf([true])
 })
 
-const onTelInput = (e: Event) => {
+const onTelInput = (e: Event): void => {
   const input = e.target as HTMLInputElement
   if (input.value.startsWith('+7 8') || input.value.startsWith('+78')) {
     input.value = '+7 ' + input.value.slice(4)
@@ -126,7 +134,7 @@ const handleSubmit = async (values: any, actions: any) => {
               }"
               :disabled="isLoading"
             />
-            <label class="input__label">Имя*</label>
+            <label class="input__label">Имя<span>*</span></label>
           </div>
 
           <FormMessage v-if="errorMessage">
@@ -150,7 +158,7 @@ const handleSubmit = async (values: any, actions: any) => {
               :disabled="isLoading"
               @input="onTelInput"
             />
-            <label class="input__label">Номер телефона*</label>
+            <label class="input__label">Номер телефона<span>*</span></label>
           </div>
           <FormMessage v-if="errorMessage">
             {{ errorMessage }}
@@ -199,9 +207,11 @@ const handleSubmit = async (values: any, actions: any) => {
       </Field>
     </div>
     <div class="form__bottom">
-      <button :disabled="isLoading" class="btn btn--primary" type="submit">Оставить заявку</button>
+      <button :disabled="isLoading || !form.agree || !form.fio || !form.tel" class="btn btn--primary" type="submit">
+        Оставить заявку
+      </button>
       <Field
-        v-slot="{ field, meta, errorMessage }"
+        v-slot="{ field, meta }"
         v-model="form.agree"
         name="agree"
         type="checkbox"
@@ -230,9 +240,6 @@ const handleSubmit = async (values: any, actions: any) => {
               </NuxtLink>
             </span>
           </label>
-          <FormMessage v-if="errorMessage">
-            {{ errorMessage }}
-          </FormMessage>
         </div>
       </Field>
     </div>

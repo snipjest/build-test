@@ -25,10 +25,10 @@ if (props.gallery.length > 15) {
   isManySlides.value = true
 }
 
-const fancyboxMedia = computed(() => {
+const fancyboxMedia = computed((): any[] => {
   const content: any[] = []
 
-  props.gallery.forEach((element: any) => {
+  props.gallery.forEach((element: any): void => {
     content.push(element)
   })
 
@@ -56,7 +56,7 @@ function initCarousel(): void {
   }
 }
 
-onMounted(() => {
+onMounted((): void => {
   initCarousel()
 })
 </script>

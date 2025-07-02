@@ -42,6 +42,10 @@
     .input.disabled & {
       color: $color-neutral-400;
     }
+
+    span {
+      color: $color-red;
+    }
   }
 }
 

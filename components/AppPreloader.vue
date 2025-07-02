@@ -4,7 +4,7 @@ import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin'
 
 gsap.registerPlugin(ScrambleTextPlugin)
 
-onMounted(() => {
+onMounted((): void => {
   gsap.to('.preloader__text', {
     duration: 1,
     scrambleText: {

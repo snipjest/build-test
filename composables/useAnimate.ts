@@ -3,13 +3,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
 import { view } from '@/constants'
 
-// gsap.registerPlugin(ScrollTrigger, SplitText)
-
-const waitForDOMReady = (callback: () => void, interval = 1300) => {
-  const checkDOMReady = () => {
+const waitForDOMReady = (callback: () => void, interval = 1300): void => {
+  const checkDOMReady = (): void => {
     if (document.readyState === 'interactive' || document.readyState === 'complete') {
       callback()
-      setTimeout(() => {
+      setTimeout((): void => {
         ScrollTrigger.refresh()
       }, 100)
     } else {
@@ -20,7 +18,7 @@ const waitForDOMReady = (callback: () => void, interval = 1300) => {
   setTimeout(checkDOMReady, interval)
 }
 
-const animateHomeScreen = () => {
+const animateHomeScreen = (): void => {
   const introTl = gsap.timeline()
 
   let optionCardGlass
@@ -99,7 +97,7 @@ const animateHomeScreen = () => {
         yPercent: -100,
         duration: 1,
         ease: 'power3',
-        onComplete: () => {
+        onComplete: (): void => {
           const el = document.querySelector('.gsap-header')
           if (el) {
             el.removeAttribute('style') // удаляет все inline-стили
@@ -110,7 +108,7 @@ const animateHomeScreen = () => {
     )
 }
 
-const animateHomeScreenOnScroll = () => {
+const animateHomeScreenOnScroll = (): void => {
   const element = gsap.utils.toArray<HTMLElement>('.gsap-scale-block')
   if (!element) return
 
@@ -190,7 +188,7 @@ const animateSplitText = async () => {
   })
 }
 
-const animateDrawRandomUnderline = () => {
+const animateDrawRandomUnderline = (): void => {
   const svgVariants = [
     `<svg width="310" height="40" viewBox="0 0 310 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 20.9999C26.7762 16.2245 49.5532 11.5572 71.7979 14.6666C84.9553 16.5057 97.0392 21.8432 109.987 24.3888C116.413 25.6523 123.012 25.5143 129.042 22.6388C135.981 19.3303 142.586 15.1422 150.092 13.3333C156.799 11.7168 161.702 14.6225 167.887 16.8333C181.562 21.7212 194.975 22.6234 209.252 21.3888C224.678 20.0548 239.912 17.991 255.42 18.3055C272.027 18.6422 288.409 18.867 305 17.9999" stroke="currentColor" stroke-width="10" stroke-linecap="round"/></svg>`,
     `<svg width="310" height="40" viewBox="0 0 310 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 24.2592C26.233 20.2879 47.7083 16.9968 69.135 13.8421C98.0469 9.5853 128.407 4.02322 158.059 5.14674C172.583 5.69708 187.686 8.66104 201.598 11.9696C207.232 13.3093 215.437 14.9471 220.137 18.3619C224.401 21.4596 220.737 25.6575 217.184 27.6168C208.309 32.5097 197.199 34.281 186.698 34.8486C183.159 35.0399 147.197 36.2657 155.105 26.5837C158.11 22.9053 162.993 20.6229 167.764 18.7924C178.386 14.7164 190.115 12.1115 201.624 10.3984C218.367 7.90626 235.528 7.06127 252.521 7.49276C258.455 7.64343 264.389 7.92791 270.295 8.41825C280.321 9.25056 296 10.8932 305 13.0242" stroke="#E55050" stroke-width="10" stroke-linecap="round"/></svg>`,
@@ -201,10 +199,10 @@ const animateDrawRandomUnderline = () => {
   ]
 
   // Add attributes to <svg> elements
-  function decorateSVG(svgEl: any) {
+  function decorateSVG(svgEl: any): void {
     svgEl.setAttribute('class', 'gsap-draw-line-box-svg')
     svgEl.setAttribute('preserveAspectRatio', 'none')
-    svgEl.querySelectorAll('path').forEach((path: any) => {
+    svgEl.querySelectorAll('path').forEach((path: any): void => {
       path.setAttribute('stroke', 'currentColor')
     })
   }
@@ -216,7 +214,7 @@ const animateDrawRandomUnderline = () => {
     if (!box) return
     let enterTween: any = null
     let leaveTween: any = null
-    container.addEventListener('mouseenter', () => {
+    container.addEventListener('mouseenter', (): void => {
       // Don't restart if still playing
       if (enterTween && enterTween.isActive()) return
       if (leaveTween && leaveTween.isActive()) leaveTween.kill()
@@ -236,7 +234,7 @@ const animateDrawRandomUnderline = () => {
             duration: 0.5,
             drawSVG: '100%',
             ease: 'power2.inOut',
-            onComplete: () => {
+            onComplete: (): void => {
               enterTween = null
             }
           })
@@ -245,17 +243,17 @@ const animateDrawRandomUnderline = () => {
       // Advance for next hover across all items
       nextIndex = (nextIndex + 1) % svgVariants.length
     })
-    container.addEventListener('mouseleave', () => {
+    container.addEventListener('mouseleave', (): void => {
       const path = box.querySelector('path')
       if (!path) return
-      const playOut = () => {
+      const playOut = (): void => {
         // Don't restart if still drawing out
         if (leaveTween && leaveTween.isActive()) return
         leaveTween = gsap.to(path, {
           duration: 0.5,
           drawSVG: '100% 100%',
           ease: 'power2.inOut',
-          onComplete: () => {
+          onComplete: (): void => {
             leaveTween = null
             box.innerHTML = '' // remove SVG when done
           }
@@ -271,7 +269,7 @@ const animateDrawRandomUnderline = () => {
   })
 }
 
-const animate3DPerspective = () => {
+const animate3DPerspective = (): void => {
   if (document.body.clientWidth >= view.tabletLg) {
     const perspective = gsap.utils.toArray<HTMLElement>('.gsap-perspective')
     const perspectiveItem = gsap.utils.toArray<HTMLElement>('.gsap-perspective-item')
@@ -304,11 +302,19 @@ const animate3DPerspective = () => {
   }
 }
 
-const animateStackingCards = () => {
+const animateStackingCards = (): void => {
   const cards = gsap.utils.toArray('.gsap-stacking-card')
 
-  // 20% от высоты экрана
-  const stackHeight = window.innerHeight * 0.2
+  if (cards.length === 0) return
+
+  // Адаптивная система: чем больше карточек, тем меньше интервал между ними
+  const maxStackHeight = window.innerHeight * 0.4 // максимальная высота стека 40%
+  const minCardSpacing = 15 // минимальный интервал между карточками
+  const maxCardSpacing = 50 // максимальный интервал между карточками
+
+  // Рассчитываем оптимальный интервал в зависимости от количества карточек
+  const idealSpacing = maxStackHeight / cards.length
+  const cardSpacing = Math.max(minCardSpacing, Math.min(maxCardSpacing, idealSpacing))
 
   let position
   if (document.body.clientWidth >= view.tabletLg) {
@@ -317,28 +323,28 @@ const animateStackingCards = () => {
     position = 'top 20%'
   }
 
-  cards.forEach((card: any, i) => {
+  cards.forEach((card: any, i: number): void => {
     gsap.fromTo(
       card.querySelector('.gsap-stacking-card-inner'),
       //начальное состояние
       {
-        scale: 1,
+        // scale: 1,
         transformOrigin: 'center top',
         filter: 'blur(0px)'
       },
       // конечное состояние при скролле
       {
-        y: gsap.utils.mapRange(1, cards.length, -20, -stackHeight + 20, cards.length - i), // сдвиг вверх
-        scale: gsap.utils.mapRange(1, cards.length, 0.4, 0.9, i), // уменьшение
-        filter: 'blur(' + gsap.utils.mapRange(1, cards.length, 4, 25, cards.length - i) + 'px)', // размытие
+        y: -(i * cardSpacing), // простой и понятный сдвиг: каждая карточка на свой интервал
+        // scale: gsap.utils.mapRange(0, cards.length - 1, 1, 0.7, i), // плавное уменьшение от 1 до 0.7
+        filter: 'blur(' + gsap.utils.mapRange(0, cards.length - 1, 0, 15, i) + 'px)', // размытие от 0 до 15px
         scrollTrigger: {
           trigger: card,
-          // markers: true,
           scrub: true,
-          start: 'top ' + stackHeight,
-          end: '+=' + window.innerHeight * 3,
+          start: 'top ' + window.innerHeight * 0.3, // 30% от высоты экрана
+          end: '+=' + window.innerHeight * 2, // сокращаем дистанцию анимации
           invalidateOnRefresh: true,
-          id: `card-${i}`
+          id: `card-${i}`,
+          markers: true // отключаем маркеры
         }
       }
     )
@@ -354,12 +360,12 @@ const animateStackingCards = () => {
   })
 }
 
-const animateParallax = () => {
+const animateParallax = (): void => {
   const blocks = gsap.utils.toArray('.gsap-parallax-bg') as any
 
   const parallaxShift = 100
 
-  blocks.forEach((bg: any, i: number) => {
+  blocks.forEach((bg: any, i: number): void => {
     const section = bg.parentElement
 
     ScrollTrigger.create({
@@ -380,7 +386,7 @@ const animateParallax = () => {
   })
 }
 
-const animateFadeInBottom = () => {
+const animateFadeInBottom = (): void => {
   const containers = gsap.utils.toArray<HTMLElement>('.gsap-fade-container')
   if (!containers) return
 
@@ -393,15 +399,15 @@ const animateFadeInBottom = () => {
       trigger: container,
       start: 'top 60%',
       once: true,
-      onEnter: () => {
+      onEnter: (): void => {
         gsap.to(items, {
           opacity: 1,
           y: 0,
           stagger: 0.2, // задержка между элементами
           duration: 0.6,
           ease: 'power2.out',
-          onComplete: () => {
-            items.forEach((el: HTMLElement) => el.removeAttribute('style'))
+          onComplete: (): void => {
+            items.forEach((el: HTMLElement): void => el.removeAttribute('style'))
           }
         })
       }

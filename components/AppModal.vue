@@ -46,7 +46,7 @@ function handleModal(event: Event): void {
   event.stopPropagation()
 }
 
-function setupModalTransition() {
+function setupModalTransition(): void {
   if (window.innerWidth < view.tablet) {
     contentTransition.value = 'vfm-slide-down'
   } else {
@@ -54,13 +54,13 @@ function setupModalTransition() {
   }
 }
 
-onMounted(() => {
-  setTimeout(() => {
+onMounted((): void => {
+  setTimeout((): void => {
     animateDrawRandomUnderline()
   }, 100)
 })
 
-onBeforeMount(() => {
+onBeforeMount((): void => {
   setupModalTransition()
 })
 </script>

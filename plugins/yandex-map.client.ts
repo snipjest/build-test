@@ -1,13 +1,13 @@
-import plugin from "vue-yandex-maps";
-import { defineNuxtPlugin } from "nuxt/app";
+import plugin from 'vue-yandex-maps'
+import { defineNuxtPlugin } from 'nuxt/app'
 
-export default defineNuxtPlugin((nuxtApp) => {
-  const config = useRuntimeConfig();
+export default defineNuxtPlugin((nuxtApp): void => {
+  const config = useRuntimeConfig()
 
   const settings = {
     apiKey: config.public.ymapsApiKey,
-    lang: "ru_RU"
-  };
+    lang: 'ru_RU'
+  }
 
-  nuxtApp.vueApp.use(plugin, settings);
-});
+  nuxtApp.vueApp.use(plugin, settings)
+})

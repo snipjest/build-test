@@ -41,11 +41,11 @@ if (data.value) {
   }
 }
 
-const onSubmitSuccess = () => {
+const onSubmitSuccess = (): void => {
   openSuccessModal()
 }
 
-const onSubmitFailure = () => {
+const onSubmitFailure = (): void => {
   openFailureModal()
 }
 
@@ -107,7 +107,7 @@ const yandexMarkerOptions = (place: Place) => {
   }
 }
 
-const handleMarkerClick = (place: Place) => {
+const handleMarkerClick = (place: Place): void => {
   mapInstance.panTo(place.latLng, {
     duration: 500,
     delay: 0
@@ -115,20 +115,20 @@ const handleMarkerClick = (place: Place) => {
   mapInstance.setCenter(place.latLng, 17)
 }
 
-const handleCreated = (map: any) => {
+const handleCreated = (map: any): void => {
   mapInstance = map
 }
 
-const hideOverlayMap = () => {
+const hideOverlayMap = (): void => {
   isOverlayMap.value = false
 }
 
-onMounted(() => {
-  waitForDOMReady(() => {
+onMounted((): void => {
+  waitForDOMReady((): void => {
     isDomReady.value = true
     animateHomeScreen()
     animateParallax()
-    setTimeout(() => {
+    setTimeout((): void => {
       animateHomeScreenOnScroll()
       animateFadeInBottom()
     }, 1700)
@@ -139,14 +139,14 @@ onMounted(() => {
   animateDrawRandomUnderline()
   animate3DPerspective()
   animateStackingCards()
-  window.addEventListener('resize', () => {
+  window.addEventListener('resize', (): void => {
     handleResize()
   })
 })
 
-onUnmounted(() => {
+onUnmounted((): void => {
   destroyCarousel()
-  window.removeEventListener('resize', () => {
+  window.removeEventListener('resize', (): void => {
     handleResize()
   })
 })
@@ -372,6 +372,7 @@ onUnmounted(() => {
   position: relative;
   height: 100vh;
   min-height: 1080px;
+  max-height: 1080px;
   margin-top: -72px;
   color: $color-neutral-800;
 
@@ -405,10 +406,6 @@ onUnmounted(() => {
 
     @media (min-width: $tablet) {
       padding-top: 180px;
-    }
-
-    @media (min-width: $desktop-lg) {
-      padding-top: 300px;
     }
   }
 
@@ -723,7 +720,7 @@ onUnmounted(() => {
     @media (min-width: $tablet-lg) {
       text-align: left;
       position: sticky;
-      top: 44%;
+      top: 100px;
     }
   }
 
@@ -751,15 +748,15 @@ onUnmounted(() => {
   }
 
   &__item {
-    padding: 0 val(16, 40);
-    margin: 0 val(8, 24);
+    padding: 0 val(16, 20);
+    margin: 0 val(8, 10);
     background-color: #ffffff;
-    border-radius: val(20, 32);
+    border-radius: val(20, 24);
   }
 
   &__img {
     aspect-ratio: 1/1;
-    height: val(132, 262);
+    height: val(132, 200);
   }
 }
 
@@ -845,6 +842,7 @@ onUnmounted(() => {
   }
 
   &__title {
+    text-align: center;
     margin-bottom: 32px;
 
     @media (min-width: $tablet-lg) {

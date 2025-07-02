@@ -7,7 +7,7 @@ export default function useHandleCallback() {
   const { closeAll } = useVfm()
   const { openSuccessModal, openFailureModal } = useFeedback()
 
-  function handleCallback() {
+  function handleCallback(): void {
     openModal({
       title: 'Обратный звонок',
       description: 'Оставьте заявку, и наш менеджер свяжется с вами в течение часа',
@@ -16,7 +16,7 @@ export default function useHandleCallback() {
           await closeAll()
           openSuccessModal()
         },
-        onSubmitFailure(error: any) {
+        onSubmitFailure(error: any): void {
           openFailureModal()
         }
       },

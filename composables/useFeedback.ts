@@ -2,7 +2,7 @@ import { h } from 'vue'
 import { useModal, useModalSlot } from 'vue-final-modal'
 import AppModal from '@/components/AppModal.vue'
 
-const openSuccessModal = () => {
+const openSuccessModal = (): void => {
   const { open, close } = useModal({
     component: AppModal,
     attrs: {
@@ -27,7 +27,7 @@ const openSuccessModal = () => {
 
 let errorStatusCode: string | undefined
 
-const openFailureModal = () => {
+const openFailureModal = (): void => {
   const { open, close } = useModal({
     component: AppModal,
     attrs: {

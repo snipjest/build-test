@@ -16,7 +16,7 @@ const isOpenMenu = ref<boolean>(false)
 const isScroll = ref<boolean>(false)
 const customHeaderClass = props.customClass !== undefined
 
-const toggleMenu = () => {
+const toggleMenu = (): void => {
   if (isOpenMenu.value) {
     isOpenMenu.value = false
   } else {
@@ -24,20 +24,20 @@ const toggleMenu = () => {
   }
 }
 
-const handleMenuBody = (event: Event) => {
+const handleMenuBody = (event: Event): void => {
   const target = event.target as HTMLElement
   if (!target.closest('.header__body') && isOpenMenu.value) {
     toggleMenu()
   }
 }
 
-const goToHome = () => {
+const goToHome = (): void => {
   isOpenMenu.value = false
   window.scrollTo({ top: 0, behavior: 'smooth' })
   navigateTo('/')
 }
 
-watch(isOpenMenu, newValue => {
+watch(isOpenMenu, (newValue: boolean): void => {
   if (newValue) {
     scrollLock()
   } else {
@@ -45,24 +45,24 @@ watch(isOpenMenu, newValue => {
   }
 })
 
-const handleScroll = () => {
+const handleScroll = (): void => {
   const scrollY = window.scrollY || document.documentElement.scrollTop
   isScroll.value = scrollY > 0
 }
 
-onMounted(() => {
+onMounted((): void => {
   handleScroll()
   window.addEventListener('scroll', handleScroll)
-  window.addEventListener('resize', () => {
+  window.addEventListener('resize', (): void => {
     if (document.body.clientWidth >= view.tabletLg) {
       isOpenMenu.value = false
     }
   })
 })
 
-onUnmounted(() => {
+onUnmounted((): void => {
   window.removeEventListener('scroll', handleScroll)
-  window.removeEventListener('resize', () => {
+  window.removeEventListener('resize', (): void => {
     if (document.body.clientWidth >= view.tabletLg) {
       isOpenMenu.value = false
     }
