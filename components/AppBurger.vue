@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 defineProps<{
+  openMenu: boolean
   isScroll: boolean
   customHeaderClass: boolean
 }>()
