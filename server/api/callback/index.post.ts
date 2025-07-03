@@ -5,7 +5,7 @@ export default defineEventHandler(async event => {
 
   // Если baseUrl не задан
   if (!baseUrl) {
-    // return console.log(body)
+    return
   }
 
   // Иначе — запрос к удалённому серверу
